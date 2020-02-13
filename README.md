@@ -104,8 +104,10 @@ Rent platform for video games from local owners.
   - redirects to /notifications if user presses button
 
 <br>
+
 ## Models
-  - User 
+ 
+ - User 
     new Schema ({
      	_id: ,
      	email: String, required: true,
@@ -141,22 +143,26 @@ Rent platform for video games from local owners.
 			maxDays: Number, required: true
 			isAvailable: Boolean, **
     })
+    
     <br>
+    
 ## Backlog
-  - Confirmation.hbs
+
+ - Confirmation.hbs
     - Summary of product
     - Confirmation button
     
-	- User profile
+ - User profile
     - Wishlist
     - Check who is renting my game in the games list
     - Who favorited the games posted
     
-	- Success
+ - Success
     - Contact button besides the 'go home' to call the other user
     
-	- Homepage
+ - Homepage
     - Filter part on the search
+    
 <br>
 
 ## Links
@@ -169,5 +175,6 @@ Rent platform for video games from local owners.
 [Deploy Link]()
 
 <br>
+
 ### Slides
 [Google Slides Link]()
