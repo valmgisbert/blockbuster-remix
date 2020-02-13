@@ -17,6 +17,7 @@ Rent platform for video games from local owners.
 - **user-profile** - As a user I want to check my profile information and be able to edit it, and add new games to my renting library. Also, to go back to the home page if I don't want to see the profile anymore.
 - **notifications** - As a user I want to check my notifications in-depth, to see who has rented my game and games I have rented.
 <br>
+
 ## API routes (back-end)
 
 - GET / 
