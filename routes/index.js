@@ -3,10 +3,10 @@ const router = express.Router();
 
 const signupRouter = require('./signup')
 const logRouter = require('./login')
+const authRouter = require('./auth-route')
+const homeRouter = require('./homepage')
 const profileRouter = require('./profile')
 const rentRouter = require('./rent')
-const homeRouter = require('./homepage')
-const authRouter = require('./auth-route')
 
 
 router.use('/signup', signupRouter);

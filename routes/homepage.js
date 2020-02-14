@@ -1,9 +1,22 @@
 const express = require('express');
 const homeRouter = express.Router();
 
+const GameForRent = require('./../models/GameForRent');
+
+
 //GET the search results
-homeRouter.get('/game-search', (req, res, next) => {
-  res.render('game-search-results');
+homeRouter.post('/game-search', (req, res, next) => {
+  const {title} = req.body;
+  console.log(req.body);
+  
+  GameForRent.find({title})
+    .then((games) => {
+      console.log('games', games);
+      
+      const searchResults = games;
+      res.render('game-search-results', {searchResults})
+    })
+    .catch(err => console.log('There was an error searching for the game', err))
 }) 
 
 //GET game rent-form CHECK!!
