@@ -9,10 +9,10 @@ const searchRouter = require('./search')
 const authRouter = require('./auth-route')
 
 
-//router.use('/signup', signupRouter);
+router.use('/signup', signupRouter);
 router.use('/login', logRouter);
 router.use('/', authRouter);
-router.use('/homepage', searchRouter);
+// router.use('/homepage', searchRouter);
 // router.use('/user-profile', profileRouter);
 // router.use('/rent', rentRouter);
 
