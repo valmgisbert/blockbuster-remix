@@ -10,6 +10,7 @@
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
     "seed": "node ./bin/seed.js",
+    "seedgames": "node ./bin/seedGame.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -33,6 +34,7 @@
     "hbs": "^4.1.0",
     "mongoose": "^5.8.12",
     "morgan": "^1.9.1",
+    "unirest": "^0.6.0",
     "zxcvbn": "^4.4.2"
   },
   "devDependencies": {

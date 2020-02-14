@@ -7,6 +7,8 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
+//const VideoGameAPI = require('unirest');
+const http = require("https");
 
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
@@ -46,7 +48,6 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 //session middleware
-
 app.use(
   session({
     secret: "basic-auth-secret",

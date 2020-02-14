@@ -8,19 +8,22 @@
 <br>
 <br>
 <h3>Add a game</h3>
-<form action='/add-game' method='GET'>
+<form action='/profile' method='post'>
 
   <label for=''>Game</label>
-  <input type='text' name='title'>
+  <input type='text' name='game'>
 
-  <label for=''>Console</label>
-  <input type='text' name='console'>
+  <label for=''>Platform</label>
+  <input type='text' name='platform'>
 
   <label for=''>Price</label>
-  <input type='text' name='price'>
+  <input type='number' name='price' value='10'>
 
-  <label for=''>Days</label>
-  <input type='text' name='maxDays'>
+  <label for=''>Minimum days</label>
+  <input type='number' name='minDays' value='4'>
+
+  <label for=''>Maximum days</label>
+  <input type='number' name='maxDays' value='10'>
 
   <button type='submit'>Add a game</button>
 </form>
