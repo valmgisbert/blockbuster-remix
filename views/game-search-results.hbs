@@ -1,0 +1,15 @@
+<h2>Search results</h2>
+<div class="container">
+  {{#each game}}
+  <div class="card">
+    <div class="card-cover">
+      {{this.cover.url}}
+    </div>
+    <div class="card-info">
+      {{this.price}}
+      {{this.title}}
+      {{this.platforms}}
+    </div>
+  </div>
+  {{/each}}
+</div>

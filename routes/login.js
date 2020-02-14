@@ -21,14 +21,12 @@ logRouter.post('/', (req, res, next) => {
       const correctPassword = bcrypt.compareSync(password, passwordDB);
 
       console.log('correct', correctPassword);
-      console.log('db ps', passwordDB);
+      console.log('db ps', password);
       console.log('userps', user.password);
       
-      
-      
-      if (passwordDB === user.password) {
-        //req.session.currentUser = user;
-        res.render('homepage')
+      if (correctPassword) {
+        req.session.currentUser = user;
+        res.redirect('/homepage');
       }
       else {
         res.render('login', {errorMsg: 'Wrong password, bitch!'})

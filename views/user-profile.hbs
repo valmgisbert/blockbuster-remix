@@ -1,0 +1,40 @@
+<h2>Profile</h2>
+<h3>My profile</h3>
+{{user.fullName}}
+{{user.email}}
+<br>
+<a href="/signup">
+<button>Edit profile</button></a>
+<br>
+<br>
+<h3>Add a game</h3>
+<form action='/add-game' method='GET'>
+
+  <label for=''>Game</label>
+  <input type='text' name='title'>
+
+  <label for=''>Console</label>
+  <input type='text' name='console'>
+
+  <label for=''>Price</label>
+  <input type='text' name='price'>
+
+  <label for=''>Days</label>
+  <input type='text' name='maxDays'>
+
+  <button type='submit'>Add a game</button>
+</form>
+<br>
+{{#if errorMsg}}
+<p>{{errorMsg}}</p>
+{{/if}}
+<br>
+<h3>My games</h3>
+<br>
+<br>
+<br>
+<a href="/homepage">
+<button>Home</button></a>
+
+
+

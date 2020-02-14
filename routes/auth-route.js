@@ -6,12 +6,12 @@ authRouter.use((req, res, next) => {
     next();
   }
   else {
-    res.redirect('login')
+    res.redirect('/login')
   }
 });
 
-authRouter.get('/', (req, res, next) => {
-  res.render('homepage');
-})
+// authRouter.get('/', (req, res, next) => {
+//   res.render('homepage');
+// })
 
 module.exports = authRouter;
