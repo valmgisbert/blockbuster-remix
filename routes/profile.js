@@ -1,6 +1,6 @@
 const express = require("express");
 const profileRouter = express.Router();
-const User = require("./../models/User"); // for future use in setting the current user ID
+const User = require("./../models/User");
 const GameForRent = require("./../models/GameForRent");
 const axios = require("axios");
 
@@ -8,11 +8,16 @@ const axios = require("axios");
 profileRouter.get("/game-add-search/:gameTitle/:gamePlatform", (req, res) => {
   let gameTitle = req.params.gameTitle;
   let gamePlatform = req.params.gamePlatform;
-  const data = {
-    gameTitle: gameTitle,
-    gamePlatform: gamePlatform
-  };
-  res.render("profile", data);
+  GameForRent.find({ gameOwnerRef: req.session.currentUser._id })
+  .then(allGames => {
+    const data = {
+      games: allGames,
+      gameTitle: gameTitle,
+      gamePlatform: gamePlatform
+    };
+    res.render("profile", data);
+  })
+  .catch(err => console.log(err));
 });
 
 // POST to get preliminary videogame search results and render game-add-search
@@ -32,7 +37,6 @@ profileRouter.post("/", (req, res) => {
     }
   })
     .then(response => {
-      console.log("DATA GOT", response.data.result);
       const data = {
         games: response.data.result
       };
@@ -120,6 +124,7 @@ profileRouter.post("/game-add-search", (req, res) => {
     .then(response => {
       console.log("GAME DATA", response[0].data);
       const pr = GameForRent.create({
+        gameOwnerRef: req.session.currentUser._id, // Game owner Id referenced in Game
         title: response[0].data.result.title,
         platform: platformCorrected,
         price,
@@ -131,16 +136,6 @@ profileRouter.post("/game-add-search", (req, res) => {
     })
     .then(gameForRent => {
       console.log(`Game "${gameForRent.title}" created in DB`);
-      console.log("activeUserId", req.session.currentUser._id)
-      // add game reference to gamesForRent array in Users
-      User.findById(req.session.currentUser._id)
-      .then(activeUser => {
-        console.log("ACTIVE USER", activeUser.email);
-        activeUser.gamesForRent.push(gameForRent._id);
-        console.log(`Game ${gameForRent._id} added to user array`);
-        console.log(activeUser.gamesForRent.length)
-      })
-      .catch(err => console.log(err))
       res.redirect("/profile");
     })
     .catch(error => {
@@ -150,7 +145,8 @@ profileRouter.post("/game-add-search", (req, res) => {
 
 // GET render profile
 profileRouter.get("/", (req, res, next) => {
-  GameForRent.find()
+  // find all games from current active user
+  GameForRent.find({ gameOwnerRef: req.session.currentUser._id })
     .then(allGames => {
       const data = {
         games: allGames

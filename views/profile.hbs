@@ -23,25 +23,6 @@
   <br>
   <label for=''>Platform</label>
   <input type='text' name='platform' value='{{this.gamePlatform}}' readonly style="background-color:lightgray">
-
-  {{!-- <select name="platform" value="">
-    <option value="switch">Switch</option>
-    <option value="wii">Wii</option>
-    <option value="wii-u">WiiU</option>
-    <option value="gamecube">GameCube</option>
-    <option value="3ds">Nintendo 3DS</option>
-    <option value="3ds">Nintendo DS</option>
-    <option value="playstation-4">PS4</option>
-    <option value="playstation-3">PS3</option>
-    <option value="playstation-2">PS2</option>
-    <option value="playstation">PS1</option>
-    <option value="psp">PSP</option>
-    <option value="pc">PC</option>
-    <option value="xbox-one">XONE</option>
-    <option value="xbox-360">Xbox 360</option>
-    <option value="xbox">Xbox</option>
-  </select> --}}
-
   <br>
   <label for=''>Price</label>
   <input type='number' name='price' value='10'>
@@ -63,8 +44,13 @@
 <h3>My games</h3>
 <br>
 {{#each games}}
-{{this.title}}
-{{this.platform}}
+Title:{{this.title}}.
+Platform:{{this.platform}}.
+Price: ${{this.price}}.
+Min. Days:{{this.minDays}}.
+Max. Days:{{this.maxDays}}.
+Availability:{{this.isAvailable}}.
+<button>DELETE</button>
 <br>
 {{/each}}
 <br>

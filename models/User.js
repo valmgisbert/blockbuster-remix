@@ -14,9 +14,8 @@ const userSchema = new Schema(
         typeOfCard: { type: String, required: true, enum: ["Visa", "MasterCard", "American Express", "Other"]  },
         cardNumber: { type: Number, required: true  },
         expDate: { type: Date, required: true },
-        cvv: { type: Number, required: true  },
-    },
-    gamesForRent: [String] // ARRAY OF GAMES AVAILABLE FOR RENT
+        cvv: { type: Number, required: true },
+    }
 },
 {
     timestamps: {
