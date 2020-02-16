@@ -14,7 +14,7 @@ router.use('/login', logRouter);
 router.use('/', authRouter);
 router.use('/homepage', homeRouter);
 router.use('/profile', profileRouter);
-// router.use('/rent', rentRouter);
+router.use('/rent', rentRouter);
 
 router.get('/logout', (req, res, next) => {
   req.session.destroy(err => {

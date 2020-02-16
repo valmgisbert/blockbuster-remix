@@ -1,0 +1,21 @@
+<h3>2. Select one from the games Available</h3>
+<br>
+{{#each games}}
+{{this.title}}
+{{this.platform}}
+<a href="/profile/game-add-search/{{this.title}}/{{this.platform}}">This One!</a>
+<br>
+{{/each}}
+<br>
+{{#if errorMsg}}
+<p>{{errorMsg}}</p>
+{{/if}}
+<br>
+<br>
+<a href="/homepage"><button>Home</button></a>
+
+<script>
+function myFunction(arg) {
+  document.querySelector("#game-input").value = arg;
+}
+</script>
