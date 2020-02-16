@@ -3,11 +3,11 @@ const Schema = mongoose.Schema;
 
 const gameForRentSchema = new Schema(
   {
-    gameAPIRef: { type: String, required: true }, // url to get info from api. we can also use title and platform. NEEDED?
-    rentRequestRef: { type: String, required: false }, //COULD BE AN ARRAY OF REQUESTS. NEEDED?
-    gameOwnerRef: { type: String, required: true }, 
-    title: { type: String, required: true }, // from api
-    platform: { type: String, required: true }, // from api
+    // gameAPIRef: { type: String, required: true }, // REMOVED AS GAMES CAN BE FOUND IN API BY TITLE AND PLATFORM
+    // rentRequestRef: { type: String, required: false }, // REMOVED AS THIS WILL BE REFERENCED IN THE RENT REQUEST
+    // gameOwnerRef: { type: String, required: true },  // REMOVED AS THE GAMES WILL BE REFERENCED IN USER MODEL
+    title: { type: String, required: true }, // exact format from api
+    platform: { type: String, required: true }, // exact format from api
     price: { type: Number, required: true },
     minDays: { type: Number, required: false },
     maxDays: { type: Number, required: true },

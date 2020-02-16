@@ -4,7 +4,7 @@ const User = require("./../models/User"); // for future use in setting the curre
 const GameForRent = require("./../models/GameForRent");
 const axios = require("axios");
 
-// GET after selecting game from list, auto populate game title and platform fields
+// GET after selecting game from list, render profile and auto populate game title and platform fields
 profileRouter.get("/game-add-search/:gameTitle/:gamePlatform", (req, res) => {
   let gameTitle = req.params.gameTitle;
   let gamePlatform = req.params.gamePlatform;
@@ -15,7 +15,7 @@ profileRouter.get("/game-add-search/:gameTitle/:gamePlatform", (req, res) => {
   res.render("profile", data);
 });
 
-// POST to get preliminary videogame search results
+// POST to get preliminary videogame search results and render game-add-search
 profileRouter.post("/", (req, res) => {
   const { game } = req.body;
 
@@ -48,7 +48,7 @@ profileRouter.post("/game-add-search", (req, res) => {
   // deconstruct of videogame form
   const { title, platform, price, minDays, maxDays } = req.body;
 
-  // switch case to fix platform field format because this API is SpECiaL ¬¬
+  // switch case to fix platform field format because this API is SspECiaL ¬¬
   let platformCorrected = "";
   switch (platform) {
     case "Switch":
@@ -120,10 +120,8 @@ profileRouter.post("/game-add-search", (req, res) => {
     .then(response => {
       console.log("GAME DATA", response[0].data);
       const pr = GameForRent.create({
-        gameAPIRef: response[0].data.query,
-        gameOwnerRef: "5e4567f0b0397ad48473dc98", // PLACEHOLDER. ID NEEDS TO BE ASSIGNED FROM CURRENT USER
         title: response[0].data.result.title,
-        platform,
+        platform: platformCorrected,
         price,
         minDays,
         maxDays,
@@ -133,7 +131,16 @@ profileRouter.post("/game-add-search", (req, res) => {
     })
     .then(gameForRent => {
       console.log(`Game "${gameForRent.title}" created in DB`);
-      console.log("GAME CREATED", gameForRent);
+      console.log("activeUserId", req.session.currentUser._id)
+      // add game reference to gamesForRent array in Users
+      User.findById(req.session.currentUser._id)
+      .then(activeUser => {
+        console.log("ACTIVE USER", activeUser.email);
+        activeUser.gamesForRent.push(gameForRent._id);
+        console.log(`Game ${gameForRent._id} added to user array`);
+        console.log(activeUser.gamesForRent.length)
+      })
+      .catch(err => console.log(err))
       res.redirect("/profile");
     })
     .catch(error => {

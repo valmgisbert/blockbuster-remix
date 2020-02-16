@@ -47,7 +47,8 @@ signupRouter.post("/", (req, res, next) => {
                 cardNumber,
                 expDate,
                 cvv,
-            }
+            },
+            gamesForRent:[]
         }
       )
         .then(createUser => res.redirect("/"))

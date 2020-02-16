@@ -15,7 +15,8 @@ const users = [
             cardNumber: 1122334455667788,
             expDate: "2022-08-02",
             cvv: 123,
-        }
+        },
+        gamesForRent:[]
     },
     {
         email: "owner@gmail.com",
@@ -30,7 +31,8 @@ const users = [
             cardNumber: 8877665544332211,
             expDate: "2023-11-11",
             cvv: 234,
-        }
+        },
+        gamesForRent:[]
     },
     {
         email: "renter@gmail.com",
@@ -45,7 +47,8 @@ const users = [
             cardNumber: 6677883647676,
             expDate: "2023-12-12",
             cvv: 345,
-        }
+        },
+        gamesForRent:["53u45o3uh54o", "hiofhe834987539"]
     },
 ];
 

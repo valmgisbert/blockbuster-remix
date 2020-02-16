@@ -15,7 +15,8 @@ const userSchema = new Schema(
         cardNumber: { type: Number, required: true  },
         expDate: { type: Date, required: true },
         cvv: { type: Number, required: true  },
-    }
+    },
+    gamesForRent: [String] // ARRAY OF GAMES AVAILABLE FOR RENT
 },
 {
     timestamps: {
