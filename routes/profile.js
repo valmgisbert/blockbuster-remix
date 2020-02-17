@@ -30,7 +30,7 @@ profileRouter.post("/", (req, res) => {
     headers: {
       "content-type": "application/octet-stream",
       "x-rapidapi-host": "chicken-coop.p.rapidapi.com",
-      "x-rapidapi-key": "ebde97877cmsh57d04785db64b6cp1c30f0jsn986c5e407a9c"
+      "x-rapidapi-key": process.env.CLIENT_KEY
     },
     params: {
       title: `${game}`
@@ -112,7 +112,7 @@ profileRouter.post("/game-add-search", (req, res) => {
     headers: {
       "content-type": "application/octet-stream",
       "x-rapidapi-host": "chicken-coop.p.rapidapi.com",
-      "x-rapidapi-key": "ebde97877cmsh57d04785db64b6cp1c30f0jsn986c5e407a9c"
+      "x-rapidapi-key": process.env.CLIENT_KEY
     },
     params: {
       platform: `${platformCorrected}`
@@ -127,6 +127,7 @@ profileRouter.post("/game-add-search", (req, res) => {
         gameOwnerRef: req.session.currentUser._id, // Game owner Id referenced in Game
         title: response[0].data.result.title,
         platform: platformCorrected,
+        image: response[0].data.result.image, 
         price,
         minDays,
         maxDays,

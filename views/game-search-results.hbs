@@ -5,8 +5,16 @@
     <div class="card-cover">
     </div>
     <div class="card-info">
+      <img src="{{this.image}}" alt="cover-img">
+      <br>
       {{this.title}}
-      {{this.price}}
+      <br>
+      {{this.platform}}
+      <br>
+      ${{this.price}}
+      <br>
+      <a href="/homepage/rent-form/{{this.title}}/{{this.platform}}/{{this._id}}/{{this.gameOwnerRef}}">
+      <button>Rent</button></a>
     </div>
   </div>
   {{/each}}
