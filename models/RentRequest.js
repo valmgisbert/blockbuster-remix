@@ -3,9 +3,9 @@ const Schema = mongoose.Schema;
 
 const rentRequestSchema = new Schema(
   {
-    gameOwnerRef: { type: Number, required: false },
-    gameForRentRef: { type: Number, required: false },
-    gameRenterRef: { type: Number, required: false }
+    gameForRentRef: { type: mongoose.ObjectId, required: true },
+    gameOwnerRef: { type: mongoose.ObjectId, required: true },
+    gameRenterRef: { type: mongoose.ObjectId, required: true }
   },
   {
     timestamps: {

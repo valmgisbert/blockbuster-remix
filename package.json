@@ -11,6 +11,7 @@
     "dev": "nodemon ./bin/www",
     "seed": "node ./bin/seed.js",
     "seedgames": "node ./bin/seedGame.js",
+    "seedrents": "node ./bin/seedRentReq.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
