@@ -42,7 +42,7 @@ profileRouter.get('/', (req, res) => {
 
 //POST to send to body profile
 profileRouter.post('/', (req, res) => {
-  const {game, platform, price, minDays, maxDays} = req.body;
+  const {title, platform, price, minDays, maxDays} = req.body;
   console.log('game', game);
   console.log('platform', platform);
   

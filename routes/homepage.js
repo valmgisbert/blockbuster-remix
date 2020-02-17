@@ -19,6 +19,9 @@ homeRouter.post('/game-search', (req, res, next) => {
     .catch(err => console.log('There was an error searching for the game', err))
 }) 
 
+
+
+
 //GET game rent-form CHECK!!
 homeRouter.get('/game-search-results', (req, res, next) => {
   res.redirect('/rent-form')
