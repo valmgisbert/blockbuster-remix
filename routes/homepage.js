@@ -9,7 +9,7 @@ homeRouter.post('/game-search', (req, res, next) => {
   const {title} = req.body;
   console.log(req.body);
   
-  GameForRent.find({title})
+  GameForRent.find({"title": { $regex: new RegExp(title), $options: 'i' } } ) // IT WORKS!! :D
     .then((games) => {
       console.log('games', games);
       
