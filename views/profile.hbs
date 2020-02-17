@@ -4,40 +4,55 @@
 {{user.email}}
 <br>
 <a href="/signup">
-<button>Edit profile</button></a>
+  <button>Edit profile</button></a>
 <br>
 <br>
-<h3>Add a game</h3>
-<form action='/profile/new-game' method='post'>
 
-  <label for=''>Game</label>
-  <input type='text' name='title'>
-
-  <label for=''>Platform</label>
-  <input type='text' name='platform'>
-
-  <label for=''>Price</label>
-  <input type='number' name='price' value='10'>
-
-  <label for=''>Minimum days</label>
-  <input type='number' name='minDays' value='4'>
-
-  <label for=''>Maximum days</label>
-  <input type='number' name='maxDays' value='10'>
-
-  <button type='submit'>Add a game</button>
+<h3>1. Write a game title and click search</h3>
+<form action='/profile' method='post'>
+  <label for=''>Game Title</label>
+  <input type='text' name='game' value="Oxenfree">
+  <button type='submit'>Search Options</button>
 </form>
 <br>
+
+<h3>3. Fill out extra info</h3>
+<form action='/profile/game-add-search' method='post'>
+  <label for=''>Title</label>
+  <input type='text' name='title' value='{{this.gameTitle}}' readonly style="background-color:lightgray">
+  <br>
+  <label for=''>Platform</label>
+  <input type='text' name='platform' value='{{this.gamePlatform}}' readonly style="background-color:lightgray">
+  <br>
+  <label for=''>Price</label>
+  <input type='number' name='price' value='10'>
+  <br>
+  <label for=''>Minimum days</label>
+  <input type='number' name='minDays' value='4'>
+  <br>
+  <label for=''>Maximum days</label>
+  <input type='number' name='maxDays' value='10'>
+  <br>
+  <button type='submit'>Add a game</button>
+</form>
+
 {{#if errorMsg}}
 <p>{{errorMsg}}</p>
 {{/if}}
 <br>
+
 <h3>My games</h3>
 <br>
+{{#each games}}
+Title:{{this.title}}.
+Platform:{{this.platform}}.
+Price: ${{this.price}}.
+Min. Days:{{this.minDays}}.
+Max. Days:{{this.maxDays}}.
+Availability:{{this.isAvailable}}.
+<button>DELETE</button>
 <br>
+{{/each}}
 <br>
-<a href="/homepage">
-<button>Home</button></a>
 
-
-
+<a href="/homepage"><button>Home</button></a>

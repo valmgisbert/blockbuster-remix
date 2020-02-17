@@ -14,7 +14,7 @@ const userSchema = new Schema(
         typeOfCard: { type: String, required: true, enum: ["Visa", "MasterCard", "American Express", "Other"]  },
         cardNumber: { type: Number, required: true  },
         expDate: { type: Date, required: true },
-        cvv: { type: Number, required: true  },
+        cvv: { type: Number, required: true },
     }
 },
 {
