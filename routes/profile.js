@@ -144,6 +144,13 @@ profileRouter.post("/game-add-search", (req, res) => {
     });
 });
 
+// POST to delete games for rent
+profileRouter.post("/delete/:gameId", (req, res) => {
+  GameForRent.findByIdAndRemove(req.params.gameId)
+    .then(() => res.redirect("/profile"))
+    .catch(err => console.log(err))
+})
+
 // GET render profile
 profileRouter.get("/", (req, res, next) => {
   // find all games from current active user

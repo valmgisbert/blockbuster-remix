@@ -58,21 +58,11 @@ homeRouter.get('/success/:gameId/:gameOwnerId', (req, res, next) => {
     gameOwnerRef: req.params.gameOwnerId, 
     gameRenterRef: req.session.currentUser._id
   })
-  .then( (data) => {
-    res.render('success');
-    console.log(data)})
+
+  
+  .then( (data) => { res.render('success') })
   .catch( (err) => console.log(err));
 })
-//GET game rent-form CHECK!!
-// homeRouter.get('/game-search-results', (req, res, next) => {
-//   res.redirect('/rent-form')
-// })
-
-// //POST success body
-// homeRouter.post('/', (req, res, next) => {
-//   res.render('success');
-// })
-
 
 //GET render the homepage
 homeRouter.get('/', (req, res, next) => {
