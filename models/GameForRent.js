@@ -8,6 +8,7 @@ const gameForRentSchema = new Schema(
     gameOwnerRef: { type: mongoose.ObjectId, required: true },
     title: { type: String, required: true }, // exact format from api
     platform: { type: String, required: true }, // exact format from api
+    image: { type: String, required: true }, 
     price: { type: Number, required: true },
     minDays: { type: Number, required: false },
     maxDays: { type: Number, required: true },

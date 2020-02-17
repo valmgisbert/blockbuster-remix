@@ -7,10 +7,7 @@ const authRouter = require('./auth-route')
 const homeRouter = require('./homepage')
 const profileRouter = require('./profile')
 const rentRouter = require('./rent')
-const homeRouter = require('./homepage')
-const authRouter = require('./auth-route')
 const notificationsRouter = require('./notifications')
-
 
 router.use('/signup', signupRouter);
 router.use('/login', logRouter);
