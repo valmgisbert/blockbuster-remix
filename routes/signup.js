@@ -7,7 +7,7 @@ const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
 signupRouter.post("/", (req, res, next) => {
-  const { email, password, repeatPassword, fullName, birthday, gender, address, phone, typeOfCard, cardNumber, expDate, cvv  } = req.body;
+  const { email, password, repeatPassword, fullName, nickname, birthday, gender, street, neighborhood, city, phone, typeOfCard, cardNumber, expDate, cvv  } = req.body;
 
   if (email === "" || password === "") {
     res.render("signup", {
@@ -38,9 +38,14 @@ signupRouter.post("/", (req, res, next) => {
             email,
             password: hashedPassword,
             fullName,
+            nickname,
             birthday,
             gender,
-            address,
+            address: {
+                street, 
+                neighborhood, 
+                city,
+            },
             phone,
             cardInfo: {
                 typeOfCard,

@@ -5,36 +5,51 @@ const GameForRent = require("./../models/GameForRent");
 const RentRequest = require("./../models/RentRequest");
 
 notificationsRouter.get("/", (req, res) => {
-  const myGamesPr = RentRequest.find({
-    gameOwnerRef: req.session.currentUser._id
-  });
+  console.log('HELLOOOO');
+  
+  console.log('user id', req.session.currentUser._id);
+  const userId = req.session.currentUser._id;
 
-  const myRentsPr = RentRequest.find({
-    gameRenterRef: req.session.currentUser._id
-  });
+  const myGamesPr = RentRequest.find()
+  .populate('gameForRentRef')
+  .then(data => {
+    console.log('DATA', data);
+    res.render("notifications", {data});
+  })
+  .catch(err => console.log(err))
+  //.populate('gameForRentRef');
 
-  Promise.all([myGamesPr, myRentsPr])
-    .then(rentData => {
-      const data = {
-        myGames: [],
-        myRents: []
-      };
+  // const myRentsPr = RentRequest.find({
+  //   gameRenterRef: req.session.currentUser._id
+  // })
+  // //.populate('gameForRentRef');
 
-      const myGames = rentData[0];
-      myGames.forEach(Rentform => {
-        console.log(Rentform.gameForRentRef);
-        data.myGames.push(Rentform);
-      });
+  // Promise.all([myGamesPr, myRentsPr])
+  //   .then(rentData => {
+  //     const data = {
+  //       myGames: [],
+  //       myRents: []
+  //     };
 
-      const myRents = rentData[1];
-      myRents.forEach(Rentform => {
-        console.log(Rentform.gameForRentRef);
-        data.myRents.push(Rentform);
-      });
+  //     console.log('rentDATAAAA', rentData);
+      
 
-      res.render("notifications", data);
-    })
-    .catch(err => console.log(err));
+  //     const myGames = rentData[0];
+  //     myGames.forEach(Rentform => {
+  //       console.log('GAMEEEESSSS',Rentform.gameForRentRef);
+  //       data.myGames.push(Rentform);
+  //     });
+
+  //     const myRents = rentData[1];
+  //     myRents.forEach(Rentform => {
+  //       console.log(Rentform.gameForRentRef);
+  //       data.myRents.push(Rentform);
+  //     });
+
+  //     res.render("notifications", data);
+  //   })
+  //   .catch(err => console.log(err));
+  
 });
 
 module.exports = notificationsRouter;

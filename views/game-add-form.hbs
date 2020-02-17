@@ -1,0 +1,24 @@
+<h3>3. Fill out extra info</h3>
+<form action='/profile/game-add-form' method='post'>
+  <label for=''>Title</label>
+  <input type='text' name='title' value='{{this.gameTitle}}' readonly style="background-color:lightgray">
+  <br>
+  <label for=''>Platform</label>
+  <input type='text' name='platform' value='{{this.gamePlatform}}' readonly style="background-color:lightgray">
+  <br>
+  <label for=''>Price</label>
+  <input type='number' name='price' value='10'>
+  <br>
+  <label for=''>Minimum days</label>
+  <input type='number' name='minDays' value='4'>
+  <br>
+  <label for=''>Maximum days</label>
+  <input type='number' name='maxDays' value='10'>
+  <br>
+  <button type='submit'>Add a game</button>
+</form>
+
+{{#if errorMsg}}
+<p>{{errorMsg}}</p>
+{{/if}}
+<br>
