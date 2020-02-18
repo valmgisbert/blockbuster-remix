@@ -16,31 +16,6 @@
 </form>
 <br>
 
-<h3>3. Fill out extra info</h3>
-<form action='/profile/game-add-search' method='post'>
-  <label for=''>Title</label>
-  <input type='text' name='title' value='{{this.gameTitle}}' readonly style="background-color:lightgray">
-  <br>
-  <label for=''>Platform</label>
-  <input type='text' name='platform' value='{{this.gamePlatform}}' readonly style="background-color:lightgray">
-  <br>
-  <label for=''>Price</label>
-  <input type='number' name='price' value='10'>
-  <br>
-  <label for=''>Minimum days</label>
-  <input type='number' name='minDays' value='4'>
-  <br>
-  <label for=''>Maximum days</label>
-  <input type='number' name='maxDays' value='10'>
-  <br>
-  <button type='submit'>Add a game</button>
-</form>
-
-{{#if errorMsg}}
-<p>{{errorMsg}}</p>
-{{/if}}
-<br>
-
 <h3>My games</h3>
 <br>
 {{#each games}}
@@ -51,10 +26,9 @@ Min. Days:{{this.minDays}}.
 Max. Days:{{this.maxDays}}.
 Availability:{{this.isAvailable}}.
 <form action="/profile/delete/{{this._id}}" method="post">
-  <button type="submit">DELETE</button>
-  <br>
-  <br>
-  {{/each}}
-  <br>
+  <button type="submit">DELETE</button> </form>
+<br>
+{{/each}}
+<br>
 
   <a href="/homepage"><button>Home</button></a>

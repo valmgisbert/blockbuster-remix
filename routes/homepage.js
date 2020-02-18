@@ -53,15 +53,22 @@ homeRouter.get('/rent-form/:title/:platform/:gameId/:gameOwnerRef', (req, res, n
 
 //GET success page
 homeRouter.get('/success/:gameId/:gameOwnerId', (req, res, next) => {
-  RentRequest.create({
+  const createReqPr = RentRequest.create({
     gameForRentRef: req.params.gameId, 
     gameOwnerRef: req.params.gameOwnerId, 
     gameRenterRef: req.session.currentUser._id
   })
-
-  
-  .then( (data) => { res.render('success') })
-  .catch( (err) => console.log(err));
+  const findGamePr = GameForRent.findById(req.params.gameId)
+  const findOwnerPr = User.findById(req.params.gameOwnerId)
+  Promise.all([createReqPr, findGamePr, findOwnerPr])
+    .then( (data) => {
+      const successData = {
+        gameInfo: data[1],
+        ownerInfo: data[2],
+      }
+      res.render('success', successData);
+      console.log(data)})
+    .catch( (err) => console.log(err));
 })
 
 //GET render the homepage

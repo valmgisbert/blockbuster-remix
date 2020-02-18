@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const mongoose = require("mongoose");
 const User = require("../models/User");
 
@@ -55,7 +57,7 @@ const dbName = "Blockbuster-Remix-DB"
 
 // 1. ESTABLISH CONNECTION
 mongoose
-  .connect(`mongodb://localhost/${dbName}`, {
+  .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })

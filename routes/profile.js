@@ -4,8 +4,8 @@ const User = require("./../models/User");
 const GameForRent = require("./../models/GameForRent");
 const axios = require("axios");
 
-// GET after selecting game from list, render profile and auto populate game title and platform fields
-profileRouter.get("/game-add-search/:gameTitle/:gamePlatform", (req, res) => {
+// GET after selecting game from list, render game-add-form and auto populate game title and platform fields
+profileRouter.get("/game-add-form/:gameTitle/:gamePlatform", (req, res) => {
   let gameTitle = req.params.gameTitle;
   let gamePlatform = req.params.gamePlatform;
   GameForRent.find({ gameOwnerRef: req.session.currentUser._id })
@@ -15,7 +15,7 @@ profileRouter.get("/game-add-search/:gameTitle/:gamePlatform", (req, res) => {
       gameTitle: gameTitle,
       gamePlatform: gamePlatform
     };
-    res.render("profile", data);
+    res.render('game-add-form', data);
   })
   .catch(err => console.log(err));
 });
@@ -48,7 +48,7 @@ profileRouter.post("/", (req, res) => {
 });
 
 // POST from full videogame form to add a game available for rent
-profileRouter.post("/game-add-search", (req, res) => {
+profileRouter.post("/game-add-form", (req, res) => {
   // deconstruct of videogame form
   const { title, platform, price, minDays, maxDays } = req.body;
 

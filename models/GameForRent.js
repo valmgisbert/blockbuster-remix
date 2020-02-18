@@ -5,7 +5,7 @@ const gameForRentSchema = new Schema(
   {
     // gameAPIRef: { type: String, required: true }, // REMOVED AS GAMES CAN BE FOUND IN API BY TITLE AND PLATFORM
     // rentRequestRef: { type: String, required: false }, // REMOVED AS THIS WILL BE REFERENCED IN THE RENT REQUEST
-    gameOwnerRef: { type: mongoose.ObjectId, required: true },
+    gameOwnerRef: { type: mongoose.ObjectId, ref: "User", required: true },
     title: { type: String, required: true }, // exact format from api
     platform: { type: String, required: true }, // exact format from api
     image: { type: String, required: true }, 
@@ -22,6 +22,6 @@ const gameForRentSchema = new Schema(
   }
 );
 
-const GameForRent = mongoose.model("Game For Rent", gameForRentSchema);
+const GameForRent = mongoose.model("GameForRent", gameForRentSchema);
 
 module.exports = GameForRent;
