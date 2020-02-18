@@ -1,27 +1,22 @@
 <h2>Notifications</h2>
 <p><a href="/success">
-  Somebody rented your game!
 </a></p>
-<br>
 <br>
 <h3>My Games that were rented</h3>
 {{data.0.gameForRentRef.title}}
 
 {{#each myGames}}
-GameId:{{this.gameForRentRef.title}}.
-Rent Date:{{this.created_at}}.
-<button>GO</button>
+{{this.rentform.gameForRentRef.title}} rented to {{this.rentform.gameRenterRef.nickname}} on {{this.readableDate}}.
+<a href="/notifications/success/{{this.rentform._id}}">GO</a>
 <br>
 {{/each}}
 <br>
 <h3>The Games that I have rented</h3>
 {{#each myRents}}
-GameId:{{this.gameForRentRef.title}}.
-Rent Date:{{this.created_at}}.
+{{this.rentform.gameForRentRef.title}} rented from {{this.rentform.gameOwnerRef.nickname}} on {{this.readableDate}}.
 <button>GO</button>
 <br>
 {{/each}}
-<p>Idk man something happened.</p>
 <br>
 <a href="/homepage">
 <button>Home</button></a>
