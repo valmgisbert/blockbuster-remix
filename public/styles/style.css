@@ -1,0 +1,144 @@
+/* @media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+
+    
+} */
+
+body {
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  color: black;
+  background-color: #FDFFFC;
+}
+
+#nav-bar{
+  text-decoration: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  position: static;
+  font-size: 10px;
+  background-color: #011627;
+  background-size: cover;
+  padding: 7px;
+}
+
+#nav-bar a {
+  text-decoration: none;
+  color: #FDFFFC;
+}
+/* HOME */
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.home-header {
+  background-image: url("/public/images/controller.gif");
+}
+
+.home-header img{
+  align-self: center;
+  padding-bottom: 20px;
+  margin: 50px;
+  width: 75px;
+  height: auto;
+}
+
+.home-search {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-search h2 {
+  font-size: 12px;
+}
+
+.home-search input {
+  border-style: solid;
+  border: black;
+}
+
+.home-logout{
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: center;
+}
+
+/* buttons */
+button {
+  font-family: 'Press Start 2P', cursive;
+  font-size: smaller;
+  position: relative;
+  display: flex;
+  padding: 10px 10px;
+  margin: 2px;
+  text-align: center;
+  /* vertical-align: middle; */
+  /* user-select: none; */
+}
+
+    .section_8bit { 
+    width: 75%; 
+    border-left: 5px solid #FF6600;
+    border-right: 5px solid #FF6600;
+    position: relative; 
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+    }
+     
+    /* .section_8bit .wrapper{ 
+    display: block;
+    color: #FF6600;
+    padding: 10px; 
+    margin: -10px 0; 
+    border-top: 5px solid red; 
+    border-bottom: 5px solid red; 
+    } */
+     
+    .section_8bit::before, 
+    .section_8bit::after,
+    .section_8bit .wrapper::before, 
+    .section_8bit .wrapper::after { 
+      content: ''; 
+      width: 5px; 
+      height: 5px; 
+      display: block; 
+      position: absolute;   
+      background: #FF6600; 
+    }
+    .section_8bit::before{ top: -5px; left: -5px; }
+    .section_8bit::after{ top: -5px; right: -5px; }
+    .section_8bit .wrapper::before{ bottom: -5px; left: -5px; }
+    .section_8bit .wrapper::after{ bottom: -5px; right: -5px; }
+
+
+.is-primary {
+  background-color: #4062BB;
+  color: white;
+}
+
+/* Prevent stray pixels on focused inputs such as checkboxes */
+input[type="checkbox"] {
+  outline: 0;
+}
+
+
+
+

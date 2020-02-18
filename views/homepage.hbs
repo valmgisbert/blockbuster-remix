@@ -1,18 +1,26 @@
-<h1>this is HOME</h1>
-<br>
-<h2>PROFILE</h2>
-<a href="/profile">
-<button>Go to Profile</button></a>
-<br>
-<h2>SEARCH</h2>
-<form action='/homepage/game-search' method='post'>
-  <label for='Search game title'>Game</label>
-  <input type='text' name='title'>
+<div class="home">
+  <section class='home-header'>
+    <img src="/images/controller.gif" alt="controller header">
+  </section>
   <br>
-  <button type='submit' >Search for Game</button>
-</form>
 
-<br>
-<br>
-<a href="/logout">
-<button>Log out</button></a>
+  <section class='home-search'>
+    <h2>Looking for a game?</h2>
+    <br>
+    <form action='/homepage/game-search' method='post'>
+      <label for='Search game title'>Game</label>
+      <input type='text' name='title'>
+      <br>
+      <br>
+      <button type='submit' class='is-primary' >Search</button>
+    </form>
+  </section>
+
+  <br>
+  <br>
+  <section class='home-logout'>
+    <a href="/logout">
+      <button class='is-primary' >Log out</button>
+    </a>
+  </section>
+</div>
