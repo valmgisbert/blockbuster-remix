@@ -1,32 +1,37 @@
 <h2>Game rent</h2>
 
-{{title}}
-<br>
-{{platform}}
-<br>
+<div class="img-box">
 <img src="{{image}}" alt="cover-img">
+</div>
+<div class="basic-info">
+title: {{title}}
 <br>
+Platform: {{platform}}
+<br>
+Genre: {{genre}}
+<br>
+Release Date: {{releaseDate}}
+<br>
+Metacritic Score: {{score}}
+<br>
+Publisher: {{publisher}}
+<br>
+ESBR Rating: {{rating}}
+<br>
+</div>
+<div class="desc-info">
 {{description}}
+</div>
 <br>
-{{genre}}
-<br>
-{{releaseDate}}
-<br>
-{{score}}
-<br>
-{{publisher}}
-<br>
-{{rating}}
-
 
 <br>
-<h2>Basic User information</h2>
+<h3>Basic User information</h3>
 nickname: {{ownerNickname}}
+<br>
 neighborhood: {{ownerNeighborhood}}
-
 <br>
 
-<label for="Rent for"></label>
+<label for="Rent for">Select days to rent</label>
 <select>
     <option value="">3</option>
     <option value="">4</option>
@@ -37,8 +42,8 @@ neighborhood: {{ownerNeighborhood}}
 {{price}}
 <br>
 <a href="/homepage/success/{{gameId}}/{{gameOwnerId}}">
-<button>Rent</button></a>
+<button class='is-primary'>Rent</button></a>
 <br>
 <a href="/homepage/game-search-results">
-<button>Go back</button></a>
+<button class='is-primary'>Go back</button></a>
 

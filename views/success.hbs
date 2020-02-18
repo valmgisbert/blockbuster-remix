@@ -1,21 +1,39 @@
 <h2>SUCCESS!</h2>
-<p>{{gameInfo.title}} has been successfully rented.</p>
+<p>{{gameForRentRef.title}} has been successfully rented.</p>
 <br>
+
 <h4>Game Info</h4>
-<img src="{{gameForRentRef.image}}" alt="game-cover"> <br>
-title:{{gameForRentRef.title}} <br>
-platform:{{gameForRentRef.platform:}} <br>
-price:{{gameForRentRef.price}} <br>
-<h3>You can now get in contact with {{gameOwnerRef.nickname}}</h3>
-<h4>Owner Info</h4>
-fullName: {{gameOwnerRef.fullName}} <br>
-Phone: {{gameOwnerRef.phone}} <br>
-Email: {{gameOwnerRef.email}} <br>
-neighborhood: {{gameOwnerRef.address.neighborhood}} <br>
-<h4>Renter Info</h4>
-fullName: {{gameRenterRef.fullName}} <br>
-Phone: {{gameRenterRef.phone}} <br>
-Email: {{gameRenterRef.email}} <br>
-neighborhood: {{gameRenterRef.address.neighborhood}} <br>
-<a href="/homepage">
-<button>Go back home</button></a>
+    <div class="card"></div>
+        <div>
+            <img class="img-thumbnail" src="{{gameForRentRef.image}}" alt="game-cover"> <br>
+        </div>
+    <div class="card-info">
+        <br>
+        title:{{gameForRentRef.title}}
+        <br>
+        platform:{{gameForRentRef.platform:}}
+        <br>
+        price per day:${{gameForRentRef.price}}
+        <br>
+    </div>
+</div>
+
+<h4>You can now get in contact with {{gameOwnerRef.nickname}}</h3>
+
+<div class="contact-info">
+    <h4>Owner Info</h4>
+    fullName: {{gameOwnerRef.fullName}} <br>
+    Phone: {{gameOwnerRef.phone}} <br>
+    Email: {{gameOwnerRef.email}} <br>
+    neighborhood: {{gameOwnerRef.address.neighborhood}} <br>
+</div>
+
+<div class="contact-info">
+    <h4>Renter Info</h4>
+    fullName: {{gameRenterRef.fullName}} <br>
+    Phone: {{gameRenterRef.phone}} <br>
+    Email: {{gameRenterRef.email}} <br>
+    neighborhood: {{gameRenterRef.address.neighborhood}} <br>
+</div>
+
+<a href="/homepage"><button class='is-primary'>Go back home</button></a>

@@ -1,38 +1,31 @@
-<section class='section_8bit'>
-  <h2>Profile</h2>
-  <div class="wrapper">
-<h3 class='section_8bit'>My profile</h3>
-{{user.fullName}}
-{{user.email}}
-<br>
-<a href="/signup">
-  <button>Edit profile</button></a>
-<br>
-</div>
-</section>
-<br>
+<h2>My profile</h2>
+<h3>WELCOME {{nickname}}  </h3>
 
-<h3>1. Write a game title and click search</h3>
+</div>
+<br>
+<h2>Put your games for rent!</h2>
+
+<h4>Write a game title and click search</h4>
 <form action='/profile' method='post'>
   <label for=''>Game Title</label>
   <input type='text' name='game' value="Oxenfree">
-  <button type='submit'>Search Options</button>
+  <button class='is-primary' type='submit'>Search Options</button>
 </form>
-<br>
 
-<h3>My games</h3>
-<br>
+
+<h3>All my games up for rent</h3>
+
 {{#each games}}
+<div>
 Title:{{this.title}}.
 Platform:{{this.platform}}.
 Price: ${{this.price}}.
 Min. Days:{{this.minDays}}.
 Max. Days:{{this.maxDays}}.
 Availability:{{this.isAvailable}}.
+<form action="/profile/edit/{{this._id}}" method="post">
+<button class='is-primary' type="submit">edit</button> </form>
 <form action="/profile/delete/{{this._id}}" method="post">
-  <button type="submit">DELETE</button> </form>
-<br>
+<button class='is-primary' type="submit">delete</button> </form>
+</div>
 {{/each}}
-<br>
-
-  <a href="/homepage"><button>Home</button></a>
