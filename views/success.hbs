@@ -1,6 +1,21 @@
 <h2>SUCCESS!</h2>
 <p>{{gameInfo.title}} has been successfully rented.</p>
 <br>
-<p>You can now get in contact with {{ownerInfo.nickname}}</p>
+<h4>Game Info</h4>
+<img src="{{gameForRentRef.image}}" alt="game-cover"> <br>
+title:{{gameForRentRef.title}} <br>
+platform:{{gameForRentRef.platform:}} <br>
+price:{{gameForRentRef.price}} <br>
+<h3>You can now get in contact with {{gameOwnerRef.nickname}}</h3>
+<h4>Owner Info</h4>
+fullName: {{gameOwnerRef.fullName}} <br>
+Phone: {{gameOwnerRef.phone}} <br>
+Email: {{gameOwnerRef.email}} <br>
+neighborhood: {{gameOwnerRef.address.neighborhood}} <br>
+<h4>Renter Info</h4>
+fullName: {{gameRenterRef.fullName}} <br>
+Phone: {{gameRenterRef.phone}} <br>
+Email: {{gameRenterRef.email}} <br>
+neighborhood: {{gameRenterRef.address.neighborhood}} <br>
 <a href="/homepage">
 <button>Go back home</button></a>
