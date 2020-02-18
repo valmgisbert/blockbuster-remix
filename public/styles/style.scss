@@ -1,0 +1,178 @@
+//CSS
+#mobile-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body {
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  color: black;
+  background-color: #FDFFFC;
+}
+
+#nav-bar{
+  text-decoration: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  position: static;
+  font-size: 10px;
+  background-color: #011627;
+  background-size: cover;
+  padding: 7px;
+}
+
+#nav-bar a {
+  text-decoration: none;
+  color: #FDFFFC;
+}
+/* HOME */
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.home-header {
+  background-image: url("/public/images/controller.gif");
+}
+
+.home-header img{
+  align-self: center;
+  padding-bottom: 20px;
+  margin: 50px;
+  width: 75px;
+  height: auto;
+}
+
+.home-search {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-search h2 {
+  font-size: 12px;
+}
+
+// .home-search input {
+//   border-style: solid;
+//   border: black;
+// }
+
+.home-logout{
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: center;
+}
+
+// VARIABLES
+* {
+  box-sizing: border-box;
+}
+
+// short info containers template
+@mixin simple-cont( $width, $color ) {
+  box-shadow: 
+    $width 0 $color, 
+    -$width 0 $color,
+    0 (-$width) $color, 
+    0 $width $color;
+  margin: $width auto;
+}
+
+// rounded info containers template
+@mixin rounded-cont( $width, $color, $bgcolor ) {
+  box-shadow:
+    4*$width 0 $bgcolor, 
+    -4*$width 0 $bgcolor, 
+    0 (-4*$width) $bgcolor, 
+    0 4*$width $bgcolor,
+    $width 0 0 2*$width $bgcolor,
+    -$width 0 0 2*$width $bgcolor,
+    0 (-$width) 0 2*$width $bgcolor,
+    0 $width 0 2*$width $bgcolor,
+    5*$width 0 $color, 
+    -5*$width 0 $color,
+    0 (-5*$width) $color, 
+    0 5*$width $color,
+    0 0 0 3*$width $color,
+    0 2*$width 0 2*$width $color,
+    0 (-2*$width) 0 2*$width $color,
+    2*$width 0 0 2*$width $color,
+    (-2*$width) 0 0 2*$width $color;
+    margin: 5*$width auto;
+}
+
+//buttons
+$outline-width: 8px black;
+$shadow-width: 4px;
+
+$button-background: #4062BB;
+$sec-button-background: rgb(57, 87, 164);
+$shadow-color:  rgb(50, 77, 143);
+
+$del-button-background: #F7D51D;
+$del-sec-button-background: #F2C409;
+$del-shadow-color:  #E59400;
+
+// rounded info container
+.home-search {
+  @include rounded-cont( 6px, rgb(42, 76, 186), white );
+  width: 85%;
+  text-align: center;
+  padding: 20px;
+}
+
+// short info containers
+.other {
+  @include simple-cont( 4px, black );
+  width: 40%;
+  text-align: center;
+}
+
+//button 
+.is-primary {
+  background: $button-background;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  font-size: 12px;
+  padding: 10px;
+  font-family: 'Press Start 2P', cursive;
+  text-decoration: none; 
+  color: white;
+  box-shadow: inset (-$shadow-width) (-$shadow-width) 0px 0px $shadow-color;
+
+  //click act
+  &:active {
+    box-shadow: inset $shadow-width $shadow-width 0px 0px $shadow-color;
+  }
+
+  &:before {
+    top: -$outline-width;
+    left: 0;
+    border-top: $outline-width solid;
+    border-bottom: $outline-width solid;
+  }
+
+  &:after {
+    left: -$outline-width;
+    top: 0;
+    border-left: $outline-width solid;
+    border-right: $outline-width solid;
+  }
+}
