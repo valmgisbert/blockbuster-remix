@@ -13,7 +13,9 @@ profileRouter.get("/game-add-form/:gameTitle/:gamePlatform", (req, res) => {
     const data = {
       games: allGames,
       gameTitle: gameTitle,
-      gamePlatform: gamePlatform
+      gamePlatform: gamePlatform,
+      titleMessage: "3. Fill out extra info",
+      renderLink: '/profile/game-add-form' 
     };
     res.render('game-add-form', data);
   })
@@ -151,13 +153,22 @@ profileRouter.post("/delete/:gameId", (req, res) => {
     .catch(err => console.log(err))
 })
 
+// POST to edit games for rent
+profileRouter.post("/edit/:gameId", (req, res) => {
+  GameForRent.findById(req.params.gameId)
+    .then(() => res.render("profile"))
+    .catch(err => console.log(err))
+})
+
 // GET render profile
-profileRouter.get("/", (req, res, next) => {
+profileRouter.get("/", (req, res) => {
   // find all games from current active user
   GameForRent.find({ gameOwnerRef: req.session.currentUser._id })
     .then(allGames => {
+      console.log(allGames)
       const data = {
-        games: allGames
+        games: allGames,
+        nickname: req.session.currentUser.nickname
       };
       res.render("profile", data);
     })

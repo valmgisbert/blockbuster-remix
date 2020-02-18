@@ -1,23 +1,23 @@
 <h2>Search results</h2>
 <div class="container">
   {{#each searchResults}}
-  <div class="card">
-    <div class="card-cover">
+  <a href="/homepage/rent-form/{{this.title}}/{{this.platform}}/{{this._id}}/{{this.gameOwnerRef}}">
+    <div class="card">
+      <div class="card-cover">
+        <img class="img-thumbnail" src="{{this.image}}" alt="img-thumbnail">
+      </div>
+      <div class="card-info">
+        <br>  
+        title:{{this.title}}
+        <br>
+        platform:{{this.platform}}
+        <br>
+        price per day:${{this.price}}
+        <br>
+      </div>
     </div>
-    <div class="card-info">
-      <img src="{{this.image}}" alt="cover-img">
-      <br>
-      {{this.title}}
-      <br>
-      {{this.platform}}
-      <br>
-      ${{this.price}}
-      <br>
-      <a href="/homepage/rent-form/{{this.title}}/{{this.platform}}/{{this._id}}/{{this.gameOwnerRef}}">
-      <button>Rent</button></a>
-    </div>
-  </div>
+  </a>
   {{/each}}
   <a href="/homepage">
-  <button>Go back</button></a>
+    <button class='is-primary'>Go back</button></a>
 </div>

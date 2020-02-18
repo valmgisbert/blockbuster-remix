@@ -1,6 +1,5 @@
 <h1>Welcome to BlockBuster REMIX</h1>
-<br>
-<br>
+
 <form action='/login' method='post'>
 
   <label for=''>Email</label>
@@ -9,13 +8,13 @@
   <label for=''>Password</label>
   <input type='text' name='password'>
 
-  <button type='submit'>Log in</button>
+  <button class='is-primary' type='submit'>Log in</button>
 </form>
-<br>
+
 <p>Not a member?</p>
 <br>
 <a href="/signup">
-<button>Sign up</button></a>
+<button class='is-primary'>Sign up</button></a>
 
 {{#if errorMsg}}
 <p>{{errorMsg}}</p>
