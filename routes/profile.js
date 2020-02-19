@@ -91,7 +91,7 @@ profileRouter.post("/game-add-form", (req, res) => {
     case "PSP":
       platformCorrected = "psp";
       break;
-      case "VITA":
+    case "VITA":
       platformCorrected = "playstation-vita";
       break;
     case "PC":
