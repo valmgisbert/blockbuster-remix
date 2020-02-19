@@ -59,7 +59,6 @@ $del-shadow-color:  #E59400;
 }
 
 body {
-  max-width: 100%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -69,6 +68,21 @@ body {
   font-size: 10px;
   color: black;
   background-color: #FDFFFC;
+}
+
+.page-cont {
+  height: 90vh;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+
+  &--big-forms {
+    // min-width: 120%;
+    min-height: 135vh;
+  }
 }
 
 #nav-bar{
@@ -101,20 +115,13 @@ body {
 input {
   @include simple-cont(2px, grey);
   font-family: 'Press Start 2P', cursive;
-  width: 50%;
-  font-size: small;
+  width: 80%;
+  font-size: 10px;
+  padding: 2px;
   margin: 5px 5px;
 }
 
 /* HOME */
-.home {
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 10px;
-}
 
 .home-header {
   background-image: url("/public/images/controller.gif");
@@ -159,14 +166,6 @@ input {
 }
 
 //LOGIN
-.login-pg {
-  height: 90vh;
-  width: 80%;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center;
-}
 
 .login-cont {
   @include rounded-cont(4px, black, white);
@@ -194,26 +193,228 @@ input {
 
 }
 
-//signup
-.signup
+//SIGNUP
 .signup-form-1{
-  @include rounded-cont(6px, black, white );
-  // input {
-  //   margin: 5px 5px;
-  //   border: lightslategrey solid;
-  //   width: 50%;
-  // }
+  @include rounded-cont(4px, black, white );
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+
+    label {
+      text-align: left;
+    }
+  }
 }
 .signup-form-2{
-  @include rounded-cont(6px, black, white);
-  // input {
-  //   margin: 5px 5px;
-  //   border: lightslategrey solid;
-  //   width: 50%;
-  // }
+  @include rounded-cont(4px, black, white);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    label {
+      text-align: left;
+    }
+  }
 }
 
-//buttons
+//SEARCH RESULTS
+.results-cont {
+  display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: stretch;
+  align-content: space-around;
+  
+  a {
+    text-decoration: none;
+    outline: none!important;
+    border: none!important;
+  }
+}
+
+.card {
+  @include rounded-cont(4px, black, slategray);
+  display: flex;
+  background-color: slategray;
+  width: 30vw;
+  height: 30vh;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 25px 10px;
+  outline: none!important;
+  
+
+  .card-cover{
+    @include simple-cont(3px, black);
+    display: flex;
+    height: 90px;
+    width: 90px;
+      img {
+        object-fit: cover;
+        width: 100%;
+      }
+  }
+  .card-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    height: auto;
+    // padding: 2px 0;
+    color: white; 
+    text-decoration: none;
+
+    .game-title {
+      font-style: italic;
+      font-weight: bold;
+      font-size: smaller;
+      line-height: 12.5px;
+    }
+
+    .game-platform {
+      font-style: italic;
+      font-size: x-small;
+    }
+
+    .game-price {
+      font-size: x-small;
+    }
+  }
+}
+
+.search-res-btn{
+  display: flex;
+  align-items: center;
+  justify-content: baseline;
+}
+
+// game-add-search
+.game-add-search-pg {
+  height: 90vh;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.game-search-bar {
+  @include simple-cont(4px, black); 
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.game-title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  flex-grow: 20;
+}
+.game-title-btn-cont {
+  max-width: 50px;
+}
+.game-add-search-pg, h2 {
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+  // game-add-form
+.game-add-form-pg {
+  height: 90vh;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.game-add-form {
+  @include rounded-cont(4px, black, white);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+
+  form {
+    width: 100%;
+  }
+
+  input {
+    width: 95%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 5px;
+  }
+
+  button {
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+}
+
+.game-add-form-pg, h2 {
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+// notifications
+.notifications-pg {
+  height: 90vh;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.notifications-pg, h2 {
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+.notifications-box {
+  @include rounded-cont(4px, black, white);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
+  margin-bottom: 40px;
+
+  b {
+    font-style: italic;
+    color: cornsilk;
+  }
+
+  button {
+    font-size:10px;
+    margin-bottom: 15px;
+    max-height: 60px;
+    width: 100%;
+    padding: 0px;
+    line-height: 15px;
+  }
+}
+
+//BUTTONS
 .is-primary {
   background: $button-background;
   display: inline-block;

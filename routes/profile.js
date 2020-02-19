@@ -58,13 +58,13 @@ profileRouter.post("/game-add-form", (req, res) => {
     case "Switch":
       platformCorrected = "switch";
       break;
-    case "Wii":
+    case "WII":
       platformCorrected = "wii";
       break;
-    case "WiiU":
+    case "WIIU":
       platformCorrected = "wii-u";
       break;
-    case "GameCube":
+    case "GC":
       platformCorrected = "gamecube";
       break;
     case "N64":
@@ -90,6 +90,9 @@ profileRouter.post("/game-add-form", (req, res) => {
       break;
     case "PSP":
       platformCorrected = "psp";
+      break;
+    case "VITA":
+      platformCorrected = "playstation-vita";
       break;
     case "PC":
       platformCorrected = "pc";

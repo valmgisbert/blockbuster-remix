@@ -1,23 +1,23 @@
+<div class="page-cont page-cont--big-forms">
 <h2>Search results</h2>
-<div class="container">
+  <div class="results-cont">
   {{#each searchResults}}
   <a href="/homepage/rent-form/{{this.title}}/{{this.platform}}/{{this._id}}/{{this.gameOwnerRef}}">
     <div class="card">
       <div class="card-cover">
         <img class="img-thumbnail" src="{{this.image}}" alt="img-thumbnail">
       </div>
-      <div class="card-info">
-        <br>  
-        title:{{this.title}}
-        <br>
-        platform:{{this.platform}}
-        <br>
-        price per day:${{this.price}}
-        <br>
+      <div class="card-info"> 
+        <p class="game-title"> {{this.title}}</p>
+        <p class="game-platform">{{this.platform}}</p>
+        <p class="game-price">${{this.price}}</p>
       </div>
     </div>
   </a>
   {{/each}}
-  <a href="/homepage">
-    <button class='is-secondary'>Go back</button></a>
+  </div>
+    <section class='search-res-btn'>
+      <a href="/homepage">
+        <button class='is-secondary'>Go back</button></a>
+    </section>
 </div>
