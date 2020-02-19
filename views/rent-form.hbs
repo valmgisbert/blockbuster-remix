@@ -1,66 +1,71 @@
-<h2>Rent Form</h2>
+<h2>{{title}}</h2>
 
-<div class="img-box">
-<img src="{{image}}" alt="cover-img">
+<div class="all-rent-info">
+  <div class="first-row">
+    <div class="img-box">
+      <img src="{{image}}" alt="cover-img">
+    </div>
+
+    <div class="basic-info"> 
+      <p>For {{platform}}</p>
+      <p>Genres: {{genre}} </p>
+      <p>Release Date: {{releaseDate}}</p>
+      <p>Metacritic Score: {{score}}</p>
+      <p>Publisher: {{publisher}}</p>
+      <p>ESBR Rating: {{rating}}</p>
+    </div>
+    <button class='is-alt' type='button'>Description</button>
+    <div class="desc-info">
+      <p>{{description}}</p>
+    </div><br>
+  </div>
+
+
+    <div class="basic-user-info">
+      <h5>Basic User information:</h5>
+      <p>nickname: {{ownerNickname}}</p><br>
+      <p>neighborhood: {{ownerNeighborhood}}</p><br>
+    </div>
+
+    <div class="basic-rent-info">
+      <h5>Renting info:</h5>
+        <span>Price per day: €<span class="rent-price">{{price}}</span></span>
+        <span>Min days: {{minDays}}.</span>
+        <span>Max days: {{maxDays}}.</span>
+    </div>
+
+
+    <div class="rent-options">  
+      <h5>Rent options:</h5>
+      <form action="/homepage/success/{{gameId}}/{{gameOwnerId}}" method="post">
+      <label for="rent-days">Select days to rent</label>
+      <select class="rent-days-input" name="totalDays" required="true">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+      </select> <br>
+
+      <label for="Added total price">Total price</label>
+      €<input name ="totalPrice" class="rent-price-sum" type="number" readonly style="background-color:lightgray" required="true">
+
+      <button type="submit" class='is-primary'>Rent</button></a> <br>
+      </form>
+      <a href="/homepage">
+      <button class='is-primary'>Go back</button></a>
+    </div>
 </div>
 
-<div class="basic-info">
-<p>title: {{title}}</p> <br> 
-<p>Platform: {{platform}}</p><br>
-<p>Genre: {{genre}}</p><br>
-<p>Release Date: {{releaseDate}}</p><br>
-<p>Metacritic Score: {{score}}</p><br>
-<p>Publisher: {{publisher}}</p><br>
-<p>ESBR Rating: {{rating}}</p><br>
-</div>
-
-<div class="desc-info">
-<p>{{description}}</p>
-</div><br>
-
-<div class="basic-user-info">
-<h5>Basic User information:</h5>
-<p>nickname: {{ownerNickname}}</p><br>
-<p>neighborhood: {{ownerNeighborhood}}</p><br>
-</div>
-
-<div class="basic-rent-info"></div>
-<h5>Renting info:</h5>
-<span>Price per day: €<span class="rent-price">{{price}}</span></span>
-<span>Min days: {{minDays}}.</span>
-<span>Max days: {{maxDays}}.</span>
-</div>
-
-
-<div class="rent-options">  
-<h5>Rent options:</h5>
-<form action="/homepage/success/{{gameId}}/{{gameOwnerId}}" method="post">
-<label for="rent-days">Select days to rent</label>
-  <select class="rent-days-input" name="totalDays" required="true">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-    <option value="11">11</option>
-    <option value="12">12</option>
-    <option value="13">13</option>
-    <option value="14">14</option>
-  </select> <br>
-
-  <label for="Added total price">Total price</label>
-  €<input name ="totalPrice" class="rent-price-sum" type="number" readonly style="background-color:lightgray" required="true">
-
-<button type="submit" class='is-primary'>Rent</button></a> <br>
-</form>
-</div>
-
-<a href="/homepage">
-<button class='is-primary'>Go back</button></a>
 
 <script src="/javascript/rent-form.js"></script>
+<script src="/javascript/collapsible.js"></script>

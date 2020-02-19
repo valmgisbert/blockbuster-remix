@@ -311,8 +311,7 @@ input {
 
 .results-cont a {
   text-decoration: none;
-  outline: none !important;
-  border: none !important;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .card {
@@ -334,6 +333,7 @@ input {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-top: 10px;
   margin: 25px 10px;
   outline: none !important;
 }
@@ -398,6 +398,74 @@ input {
   -webkit-box-pack: baseline;
       -ms-flex-pack: baseline;
           justify-content: baseline;
+}
+
+.all-rent-info {
+  -webkit-box-shadow: 16px 0 white, -16px 0 white, 0 -16px white, 0 16px white, 4px 0 0 8px white, -4px 0 0 8px white, 0 -4px 0 8px white, 0 4px 0 8px white, 20px 0 black, -20px 0 black, 0 -20px black, 0 20px black, 0 0 0 12px black, 0 8px 0 8px black, 0 -8px 0 8px black, 8px 0 0 8px black, -8px 0 0 8px black;
+          box-shadow: 16px 0 white, -16px 0 white, 0 -16px white, 0 16px white, 4px 0 0 8px white, -4px 0 0 8px white, 0 -4px 0 8px white, 0 4px 0 8px white, 20px 0 black, -20px 0 black, 0 -20px black, 0 20px black, 0 0 0 12px black, 0 8px 0 8px black, 0 -8px 0 8px black, 8px 0 0 8px black, -8px 0 0 8px black;
+  margin: 20px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+  height: 90vh;
+  width: 85%;
+  margin: 10px 30px;
+}
+
+.all-rent-info .first-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+}
+
+.all-rent-info .first-row .img-box {
+  -webkit-box-shadow: 3px 0 black, -3px 0 black, 0 -3px black, 0 3px black;
+          box-shadow: 3px 0 black, -3px 0 black, 0 -3px black, 0 3px black;
+  margin: 3px auto;
+  height: 113px;
+  width: 90px;
+}
+
+.all-rent-info .first-row .img-box img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 100%;
+}
+
+.all-rent-info .first-row .basic-info {
+  margin: 10px;
+}
+
+.all-rent-info .desc-info {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #FFFFFF;
 }
 
 .game-add-search-pg {
@@ -578,105 +646,6 @@ input {
   line-height: 15px;
 }
 
-.is-primary {
-  background: #4062BB;
-  display: inline-block;
-  position: relative;
-  border: 0.1em transparent;
-  text-align: center;
-  font-size: 12px;
-  padding: 8px;
-  font-family: 'Press Start 2P', cursive;
-  text-decoration: none;
-  color: white;
-  -webkit-box-shadow: inset -4px -4px 0px 0px #324d8f;
-          box-shadow: inset -4px -4px 0px 0px #324d8f;
-}
-
-.is-primary:focus {
-  background: #3957a4;
-  -webkit-box-shadow: inset -6px -6px 0px 0px #324d8f;
-          box-shadow: inset -6px -6px 0px 0px #324d8f;
-  outline: none !important;
-}
-
-.is-primary:active {
-  -webkit-box-shadow: inset 4px 4px 0px 0px #324d8f;
-          box-shadow: inset 4px 4px 0px 0px #324d8f;
-}
-
-.is-primary:before, .is-primary:after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-}
-
-.is-primary:before {
-  top: -4px;
-  left: 0;
-  border-top: 4px black solid;
-  border-bottom: 4px black solid;
-}
-
-.is-primary:after {
-  left: -4px;
-  top: 0;
-  border-left: 4px black solid;
-  border-right: 4px black solid;
-}
-
-.is-secondary {
-  background: #F7D51D;
-  display: inline-block;
-  position: relative;
-  text-align: center;
-  font-size: 12px;
-  padding: 10px;
-  font-family: 'Press Start 2P', cursive;
-  text-decoration: none;
-  color: white;
-  -webkit-box-shadow: inset -4px -4px 0px 0px #E59400;
-          box-shadow: inset -4px -4px 0px 0px #E59400;
-}
-
-.is-secondary:focus {
-  background: #F7D51D;
-  -webkit-box-shadow: inset -6px -6px 0px 0px #E59400;
-          box-shadow: inset -6px -6px 0px 0px #E59400;
-  outline: none !important;
-}
-
-.is-secondary:active {
-  -webkit-box-shadow: inset 4px 4px 0px 0px #E59400;
-          box-shadow: inset 4px 4px 0px 0px #E59400;
-}
-
-.is-secondary:before, .is-secondary:after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-}
-
-.is-secondary:before {
-  top: -4px;
-  left: 0;
-  border-top: 4px black solid;
-  border-bottom: 4px black solid;
-}
-
-.is-secondary:after {
-  left: -4px;
-  top: 0;
-  border-left: 4px black solid;
-  border-right: 4px black solid;
-}
-
 .success-pg {
   height: 90vh;
   width: 85%;
@@ -741,5 +710,162 @@ input {
 
 .success-pg, button {
   margin-top: 25px;
+}
+
+.is-primary {
+  background: #4062BB;
+  display: inline-block;
+  position: relative;
+  border: 0.1em transparent;
+  text-align: center;
+  font-size: 12px;
+  padding: 8px;
+  font-family: 'Press Start 2P', cursive;
+  text-decoration: none;
+  color: white;
+  -webkit-box-shadow: inset -4px -4px 0px 0px #324d8f;
+          box-shadow: inset -4px -4px 0px 0px #324d8f;
+}
+
+.is-primary:focus {
+  background: #3957a4;
+  -webkit-box-shadow: inset -6px -6px 0px 0px #324d8f;
+          box-shadow: inset -6px -6px 0px 0px #324d8f;
+  outline: none !important;
+}
+
+.is-primary:active {
+  -webkit-box-shadow: inset 4px 4px 0px 0px #324d8f;
+          box-shadow: inset 4px 4px 0px 0px #324d8f;
+}
+
+.is-primary:before, .is-primary:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+.is-primary:before {
+  top: -4px;
+  left: 0;
+  border-top: 4px black solid;
+  border-bottom: 4px black solid;
+}
+
+.is-primary:after {
+  left: -4px;
+  top: 0;
+  border-left: 4px black solid;
+  border-right: 4px black solid;
+}
+
+.is-secondary {
+  background: #f71d1d;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  font-size: 12px;
+  padding: 10px;
+  font-family: 'Press Start 2P', cursive;
+  text-decoration: none;
+  color: white;
+  -webkit-box-shadow: inset -4px -4px 0px 0px #aa1a1a;
+          box-shadow: inset -4px -4px 0px 0px #aa1a1a;
+}
+
+.is-secondary:focus {
+  background: #f71d1d;
+  -webkit-box-shadow: inset -6px -6px 0px 0px #aa1a1a;
+          box-shadow: inset -6px -6px 0px 0px #aa1a1a;
+  outline: none !important;
+}
+
+.is-secondary:active {
+  -webkit-box-shadow: inset 4px 4px 0px 0px #aa1a1a;
+          box-shadow: inset 4px 4px 0px 0px #aa1a1a;
+}
+
+.is-secondary:before, .is-secondary:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+.is-secondary:before {
+  top: -4px;
+  left: 0;
+  border-top: 4px black solid;
+  border-bottom: 4px black solid;
+}
+
+.is-secondary:after {
+  left: -4px;
+  top: 0;
+  border-left: 4px black solid;
+  border-right: 4px black solid;
+}
+
+.is-alt {
+  background: #F7D51D;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  font-size: 12px;
+  padding: 10px;
+  font-family: 'Press Start 2P', cursive;
+  text-decoration: none;
+  color: white;
+  -webkit-box-shadow: inset -4px -4px 0px 0px #E59400;
+          box-shadow: inset -4px -4px 0px 0px #E59400;
+}
+
+.is-alt:focus {
+  background: #F7D51D;
+  -webkit-box-shadow: inset -6px -6px 0px 0px #E59400;
+          box-shadow: inset -6px -6px 0px 0px #E59400;
+  outline: none !important;
+}
+
+.is-alt:active {
+  -webkit-box-shadow: inset 4px 4px 0px 0px #E59400;
+          box-shadow: inset 4px 4px 0px 0px #E59400;
+}
+
+.is-alt:before, .is-alt:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+.is-alt:before {
+  top: -4px;
+  left: 0;
+  border-top: 4px black solid;
+  border-bottom: 4px black solid;
+}
+
+.is-alt:after {
+  left: -4px;
+  top: 0;
+  border-left: 4px black solid;
+  border-right: 4px black solid;
+}
+
+@media only screen and (min-width: 768px) {
+  p {
+    font-size: 12px;
+  }
+  body {
+    width: 95%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
