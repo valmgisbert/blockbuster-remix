@@ -1,0 +1,19 @@
+<h3>Edit below fields</h3>
+<form action="/profile/edit/{{this._id}}" method='post'>
+  <label for=''>Title</label>
+  <input type='text' name='title' value='{{this.title}}' readonly style="background-color:lightgray">
+  <br>
+  <label for=''>Platform</label>
+  <input type='text' name='platform' value='{{this.platform}}' readonly style="background-color:lightgray">
+  <br>
+  <label for=''>Price</label>
+  <input type='number' name='price' value='{{this.price}}'>
+  <br>
+  <label for=''>Minimum days</label>
+  <input type='number' name='minDays' value='{{this.minDays}}'>
+  <br>
+  <label for=''>Maximum days</label>
+  <input type='number' name='maxDays' value='{{this.maxDays}}'>
+  <br>
+  <button class='is-primary' type='submit'>Edit</button>
+</form>

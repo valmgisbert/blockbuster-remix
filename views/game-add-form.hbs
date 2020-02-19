@@ -1,5 +1,5 @@
 <h3>3. Fill out extra info</h3>
-<form action={{this.renderLink}} method='post'>
+<form action="/profile/game-add-form" method='post'>
   <label for=''>Title</label>
   <input type='text' name='title' value='{{this.gameTitle}}' readonly style="background-color:lightgray">
   <br>
@@ -18,9 +18,9 @@
   <button class='is-primary' type='submit'>Add a game</button>
 </form>
 
-<div class="error">
   {{#if errorMsg}}
+<div class="error">
     <p>{{errorMsg}}</p>
-  {{/if}}
 </div>
+  {{/if}}
 <br>

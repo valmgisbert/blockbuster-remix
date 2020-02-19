@@ -9,17 +9,15 @@ profileRouter.get("/game-add-form/:gameTitle/:gamePlatform", (req, res) => {
   let gameTitle = req.params.gameTitle;
   let gamePlatform = req.params.gamePlatform;
   GameForRent.find({ gameOwnerRef: req.session.currentUser._id })
-  .then(allGames => {
-    const data = {
-      games: allGames,
-      gameTitle: gameTitle,
-      gamePlatform: gamePlatform,
-      titleMessage: "3. Fill out extra info",
-      renderLink: '/profile/game-add-form' 
-    };
-    res.render('game-add-form', data);
-  })
-  .catch(err => console.log(err));
+    .then(allGames => {
+      const data = {
+        games: allGames,
+        gameTitle: gameTitle,
+        gamePlatform: gamePlatform
+      };
+      res.render("game-add-form", data);
+    })
+    .catch(err => console.log(err));
 });
 
 // POST to get preliminary videogame search results and render game-add-search
@@ -129,7 +127,7 @@ profileRouter.post("/game-add-form", (req, res) => {
         gameOwnerRef: req.session.currentUser._id, // Game owner Id referenced in Game
         title: response[0].data.result.title,
         platform: platformCorrected,
-        image: response[0].data.result.image, 
+        image: response[0].data.result.image,
         price,
         minDays,
         maxDays,
@@ -150,14 +148,24 @@ profileRouter.post("/game-add-form", (req, res) => {
 profileRouter.post("/delete/:gameId", (req, res) => {
   GameForRent.findByIdAndRemove(req.params.gameId)
     .then(() => res.redirect("/profile"))
-    .catch(err => console.log(err))
-})
+    .catch(err => console.log(err));
+});
 
 // POST to edit games for rent
-profileRouter.post("/edit/:gameId", (req, res) => {
+profileRouter.get("/edit/:gameId", (req, res) => {
   GameForRent.findById(req.params.gameId)
-    .then(() => res.render("profile"))
-    .catch(err => console.log(err))
+    .then((gameData) => {
+      res.render("edit-form", gameData);
+    })
+    .catch(err => console.log(err));
+});
+
+profileRouter.post("/edit/:gameId", (req, res) => {
+  const { price, minDays, maxDays } = req.body
+  console.log(req.body)
+  GameForRent.findByIdAndUpdate(req.params.gameId, { price, minDays, maxDays })
+  .then( (data) => res.redirect("/profile"))
+  .catch( (err) => console.log(err));
 })
 
 // GET render profile
@@ -165,7 +173,7 @@ profileRouter.get("/", (req, res) => {
   // find all games from current active user
   GameForRent.find({ gameOwnerRef: req.session.currentUser._id })
     .then(allGames => {
-      console.log(allGames)
+      console.log(allGames);
       const data = {
         games: allGames,
         nickname: req.session.currentUser.nickname
