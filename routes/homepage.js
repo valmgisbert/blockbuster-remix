@@ -104,6 +104,7 @@ const { totalDays, totalPrice } = req.body;
         .populate("gameRenterRef");
     })
     .then(rentRequest => {
+      rentRequest.addedMessage = "SUCCESS!"
       res.render("success", rentRequest);
       console.log(rentRequest);
     })

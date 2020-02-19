@@ -222,6 +222,9 @@ input {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  margin-right: 30px;
+  margin-left: 30px;
+  width: 85%;
 }
 
 .signup-form-1 form {
@@ -237,8 +240,12 @@ input {
           align-items: flex-start;
 }
 
+.signup-form-1 form input {
+  width: 125%;
+}
+
 .signup-form-1 form label {
-  text-align: left;
+  text-align: center;
 }
 
 .signup-form-2 {
@@ -257,6 +264,9 @@ input {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  margin-right: 30px;
+  margin-left: 30px;
+  width: 85%;
 }
 
 .signup-form-2 form {
@@ -272,8 +282,12 @@ input {
           align-items: flex-start;
 }
 
-.signup-form-2 form label {
-  text-align: left;
+.signup-form-2 input {
+  width: 90%;
+}
+
+.signup-form-2 label {
+  text-align: center;
 }
 
 .results-cont {
@@ -661,5 +675,71 @@ input {
   top: 0;
   border-left: 4px black solid;
   border-right: 4px black solid;
+}
+
+.success-pg {
+  height: 90vh;
+  width: 85%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.success-pg, h2 {
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+.success-info-box {
+  -webkit-box-shadow: 16px 0 white, -16px 0 white, 0 -16px white, 0 16px white, 4px 0 0 8px white, -4px 0 0 8px white, 0 -4px 0 8px white, 0 4px 0 8px white, 20px 0 black, -20px 0 black, 0 -20px black, 0 20px black, 0 0 0 12px black, 0 8px 0 8px black, 0 -8px 0 8px black, 8px 0 0 8px black, -8px 0 0 8px black;
+          box-shadow: 16px 0 white, -16px 0 white, 0 -16px white, 0 16px white, 4px 0 0 8px white, -4px 0 0 8px white, 0 -4px 0 8px white, 0 4px 0 8px white, 20px 0 black, -20px 0 black, 0 -20px black, 0 20px black, 0 0 0 12px black, 0 8px 0 8px black, 0 -8px 0 8px black, 8px 0 0 8px black, -8px 0 0 8px black;
+  margin: 20px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 95%;
+}
+
+.contact-info {
+  -webkit-box-shadow: 16px 0 white, -16px 0 white, 0 -16px white, 0 16px white, 4px 0 0 8px white, -4px 0 0 8px white, 0 -4px 0 8px white, 0 4px 0 8px white, 20px 0 black, -20px 0 black, 0 -20px black, 0 20px black, 0 0 0 12px black, 0 8px 0 8px black, 0 -8px 0 8px black, 8px 0 0 8px black, -8px 0 0 8px black;
+          box-shadow: 16px 0 white, -16px 0 white, 0 -16px white, 0 16px white, 4px 0 0 8px white, -4px 0 0 8px white, 0 -4px 0 8px white, 0 4px 0 8px white, 20px 0 black, -20px 0 black, 0 -20px black, 0 20px black, 0 0 0 12px black, 0 8px 0 8px black, 0 -8px 0 8px black, 8px 0 0 8px black, -8px 0 0 8px black;
+  margin: 20px auto;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 25px;
+  width: 85%;
+}
+
+.success-pg, button {
+  margin-top: 25px;
 }
 /*# sourceMappingURL=style.css.map */

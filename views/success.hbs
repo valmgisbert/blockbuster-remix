@@ -1,30 +1,31 @@
 
-<div>
-    <h2>SUCCESS!</h2>
-    <p><b>{{gameForRentRef.title}}</b> has been successfully rented.</p>
-    <br>
+<div class="success-pg">
 
-    <h4>Game Info</h4>
-        <div class="card"></div>
+    <h2>{{addedMessage}}</h2>
+
+    <div class="game-basic-info">
+        <div class="card">
             <div>
                 <img class="img-thumbnail" src="{{gameForRentRef.image}}" alt="game-cover"> <br>
             </div>
-        <div class="card-info"> 
-            <br>
-            title:{{gameForRentRef.title}}
-            <br>
-            platform:{{gameForRentRef.platform}}
-            <br>
-            price per day: €{{gameForRentRef.price}}
-            <br>
-            days to rent:{{totalDays}}
-            <br>
-            total price: €{{totalPrice}}
+            <div class="card-info"> 
+                <br>
+                title:{{gameForRentRef.title}}
+                <br>
+                platform:{{gameForRentRef.platform}}
+                <br>
+                price per day: €{{gameForRentRef.price}}
+                <br>
+                days to rent:{{totalDays}}
+                <br>
+                total price: €{{totalPrice}}
+            </div>
         </div>
     </div>
 
-    <h4>You can now get in contact with {{gameOwnerRef.nickname}}</h3>
+<h3>You can now contact {{gameOwnerRef.nickname}}</h3>
 
+<div class="success-info-box">
     <div class="contact-info">
         <h4>Owner Info</h4>
         fullName: {{gameOwnerRef.fullName}} <br>
@@ -32,7 +33,6 @@
         Email: {{gameOwnerRef.email}} <br>
         neighborhood: {{gameOwnerRef.address.neighborhood}} <br>
     </div>
-
     <div class="contact-info">
         <h4>Renter Info</h4>
         fullName: {{gameRenterRef.fullName}} <br>
@@ -40,6 +40,8 @@
         Email: {{gameRenterRef.email}} <br>
         neighborhood: {{gameRenterRef.address.neighborhood}} <br>
     </div>
+</div>
+
     <a href="/notifications"><button class='is-secondary'>Go back</button></a>
 
 </div>
