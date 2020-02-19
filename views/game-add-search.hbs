@@ -1,15 +1,25 @@
-<h3>2. Select one from the games Available</h3>
-<br>
-{{#each games}}
-{{this.title}}
-{{this.platform}}
-<a href="/profile/game-add-form/{{this.title}}/{{this.platform}}">This One!</a>
-<br>
-{{/each}}
-<br>
-{{#if errorMsg}}
-<p>{{errorMsg}}</p>
-{{/if}}
-<br>
-<br>
-<a href="/profile"><button class='is-primary'>Back to profile</button></a>
+<div class="game-add-search-pg">
+
+    <h2>2. Choose wisely!</h2>
+    {{#each games}}
+    <section class="game-search-bar">
+        <div class="game-title-bar">   
+            <span><b>{{this.title}}</b> on {{this.platform}}</span>
+        </div>
+        <div class="game-title-btn-cont">
+            <a href="/profile/game-add-form/{{this.title}}/{{this.platform}}">
+            <button class='is-primary'>This One!</button>
+            </a>
+        </div>
+    </section>
+    {{/each}}
+
+    {{#if errorMsg}}
+     <section class="error">
+      <p>{{errorMsg}}</p>
+     </section>
+    {{/if}}
+
+    <a href="/profile"><button class='is-secondary'>Back to profile</button></a>
+
+</div>
