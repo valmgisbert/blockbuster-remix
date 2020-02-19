@@ -1,20 +1,27 @@
-<h2>Notifications</h2>
+<div class="notifications-pg">
 
-<h3>My owned games that were rented</h3>
+    <h2>Notifications</h2>
 
-{{#each myGames}}
-<a href="/notifications/success/{{this.rentform._id}}">
-    <button class="notification">
-        {{this.rentform.gameForRentRef.title}} <br> rented to {{this.rentform.gameRenterRef.nickname}} on {{this.readableDate}}.
-    </button>
-</a>
-{{/each}}
+    <section class="notifications-box">
+        <h3>My owned games</h3>
+        {{#each myGames}}
+        <a href="/notifications/success/{{this.rentform._id}}">
+        <button class="is-primary">
+        <p><b>{{this.rentform.gameForRentRef.title}}</b> rented <br>to {{this.rentform.gameRenterRef.nickname}} on {{this.readableDate}}.</p>
+        </button>
+        </a>
+        {{/each}}
+    </section>
 
-<h3>The games that I have rented</h3>
-{{#each myRents}}
-<a href="/notifications/success/{{this.rentform._id}}">
-    <button class="notification">
-        {{this.rentform.gameForRentRef.title}} <br> rented from {{this.rentform.gameOwnerRef.nickname}} on {{this.readableDate}}.
-    </button>
-</a>
-{{/each}}
+    <section class="notifications-box">
+        <h3>My rented games</h3>
+        {{#each myRents}}
+        <a href="/notifications/success/{{this.rentform._id}}">
+        <button class="is-primary">
+        <p><b>{{this.rentform.gameForRentRef.title}}</b> rented <br>from {{this.rentform.gameOwnerRef.nickname}} on {{this.readableDate}}.</p>
+        </button>
+        </a>
+        {{/each}}
+    </section>
+
+</div>

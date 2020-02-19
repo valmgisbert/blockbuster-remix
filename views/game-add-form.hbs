@@ -1,26 +1,33 @@
-<h3>3. Fill out extra info</h3>
-<form action="/profile/game-add-form" method='post'>
-  <label for=''>Title</label>
-  <input type='text' name='title' value='{{this.gameTitle}}' readonly style="background-color:lightgray">
-  <br>
-  <label for=''>Platform</label>
-  <input type='text' name='platform' value='{{this.gamePlatform}}' readonly style="background-color:lightgray">
-  <br>
-  <label for=''>Price</label>
-  <input type='number' name='price' value='10'>
-  <br>
-  <label for=''>Minimum days</label>
-  <input type='number' name='minDays' value='4'>
-  <br>
-  <label for=''>Maximum days</label>
-  <input type='number' name='maxDays' value='10'>
-  <br>
-  <button class='is-primary' type='submit'>Add a game</button>
-</form>
+<div class="game-add-form-pg">
+
+  <h2>3. Fill out extra info</h2>
+
+<div class="game-add-form">
+  <form action="/profile/game-add-form" method='post'>
+    <label for=''>Title</label> <br>
+    <input type='text' name='title' value='{{this.gameTitle}}' readonly style="background-color:lightgray">
+    <br>
+    <label for=''>Platform</label> <br>
+    <input type='text' name='platform' value='{{this.gamePlatform}}' readonly style="background-color:lightgray">
+    <br>
+    <label for=''>Price per day</label> <br>
+    <input type='number' name='price' value='2' max="99">
+    <br>
+    <label for=''>Minimum days</label> <br>
+    <input type='number' name='minDays' value='3'>
+    <br>
+    <label for=''>Maximum days</label> <br>
+    <input type='number' name='maxDays' value='7' max="28">
+    <br>
+    <button class='is-primary' type='submit'>Add a game</button>
+  </form>
+</div>
 
   {{#if errorMsg}}
-<div class="error">
-    <p>{{errorMsg}}</p>
-</div>
+    <div class="error">
+      <p>{{errorMsg}}</p>
+    </div>
   {{/if}}
-<br>
+
+</div>
+

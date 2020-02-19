@@ -39,8 +39,13 @@ notificationsRouter.get("/", (req, res) => {
           "December"
         ][mngDate.getMonth()];
         var readableDate =
-        month + " " + mngDate.getDate() + "th " + mngDate.getFullYear();
+        month.slice(0,3) + " " + mngDate.getDate() + "th " + mngDate.getFullYear();
         rentform.readableDate = readableDate 
+        console.log(rentform)
+        // to reduce size of game
+        if (rentform.gameForRentRef.title.length > 20) {
+          rentform.gameForRentRef.title = rentform.gameForRentRef.title.slice(0,20) + "..."
+        } 
         data.myGames.push({rentform, readableDate}); // passing data as well as the readable date variable
       });
       
@@ -63,8 +68,12 @@ notificationsRouter.get("/", (req, res) => {
           "December"
         ][mngDate.getMonth()];
         var readableDate =
-        month + " " + mngDate.getDate() + "th " + mngDate.getFullYear();
+        month.slice(0,3) + " " + mngDate.getDate() + "th " + mngDate.getFullYear();
         rentform.readableDate = readableDate 
+        // to reduce size of game
+        if (rentform.gameForRentRef.title.length > 18) {
+          rentform.gameForRentRef.title = rentform.gameForRentRef.title.slice(0,18) + "..."
+        } 
         data.myRents.push({rentform, readableDate}); // passing data as well as the readable date variable
       });
 
