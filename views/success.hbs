@@ -7,14 +7,17 @@
         <div>
             <img class="img-thumbnail" src="{{gameForRentRef.image}}" alt="game-cover"> <br>
         </div>
-    <div class="card-info">
+    <div class="card-info"> 
         <br>
         title:{{gameForRentRef.title}}
         <br>
-        platform:{{gameForRentRef.platform:}}
+        platform:{{gameForRentRef.platform}}
         <br>
-        price per day:${{gameForRentRef.price}}
+        price per day: €{{gameForRentRef.price}}
         <br>
+        days to rent:{{totalDays}}
+        <br>
+        total price: €{{totalPrice}}
     </div>
 </div>
 

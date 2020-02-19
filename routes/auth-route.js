@@ -10,8 +10,4 @@ authRouter.use((req, res, next) => {
   }
 });
 
-// authRouter.get('/', (req, res, next) => {
-//   res.render('homepage');
-// })
-
 module.exports = authRouter;

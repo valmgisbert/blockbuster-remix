@@ -23,7 +23,7 @@ Price: ${{this.price}}.
 Min. Days:{{this.minDays}}.
 Max. Days:{{this.maxDays}}.
 Availability:{{this.isAvailable}}.
-<form action="/profile/edit/{{this._id}}" method="post">
+<form action="/profile/edit/{{this._id}}" method="get">
 <button class='is-primary' type="submit">edit</button> </form>
 <form action="/profile/delete/{{this._id}}" method="post">
 <button class='is-primary' type="submit">delete</button> </form>

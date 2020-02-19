@@ -30,7 +30,7 @@ homeRouter.get(
     const gameOwnerId = req.params.gameOwnerRef;
 
     // to get owner info for basic info showing in rent form
-    const ownerInfoPr = User.findById(gameOwnerId)
+    const ownerInfoPr = GameForRent.findById(gameId).populate("gameOwnerRef")
     // to get response from videogame DB API to get the data for the game rent form
     const apiInfoPr = axios({
       method: "GET",
@@ -46,7 +46,7 @@ homeRouter.get(
     })
     Promise.all([apiInfoPr, ownerInfoPr])
       .then(data => {
-        console.log(data[1])
+        console.log("game&owner", data[1])
         const {
           title,
           description,
@@ -69,8 +69,11 @@ homeRouter.get(
           rating,
           gameId,
           gameOwnerId,
-          ownerNickname: data[1].nickname,
-          ownerNeighborhood: data[1].address.neighborhood
+          price: data[1].price,
+          minDays: data[1].minDays,
+          maxDays: data[1].maxDays,
+          ownerNickname: data[1].gameOwnerRef.nickname,
+          ownerNeighborhood: data[1].gameOwnerRef.address.neighborhood
         };
         console.log("data", gameData);
         res.render("rent-form", gameData);
@@ -82,11 +85,16 @@ homeRouter.get(
 );
 
 //GET success page
-homeRouter.get("/success/:gameId/:gameOwnerId", (req, res, next) => {
+homeRouter.post("/success/:gameId/:gameOwnerId", (req, res, next) => {
+const { totalDays, totalPrice } = req.body;
+
   RentRequest.create({
     gameForRentRef: req.params.gameId,
     gameOwnerRef: req.params.gameOwnerId,
-    gameRenterRef: req.session.currentUser._id
+    gameRenterRef: req.session.currentUser._id,
+    totalDays,
+    totalPrice
+
   })
     .then(createdRentRequest => {
       console.log(createdRentRequest);
