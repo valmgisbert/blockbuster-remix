@@ -1,65 +1,75 @@
-<h2>SIGN UP</h2>
-<form action='/signup' method='post'>
+<div class="signup">  
+  <h2>SIGN UP</h2>
+  <section class="signup-form-1">
+  <form action='/signup' method='post'>
 
-  <label for=''>Email</label>
-  <input type='email' value="youremail@gmail.com" name='email'>
-<br>
-  <label for=''>Password</label>
-  <input type='password' minlength="6" name='password'>
-<br>
-  <label for=''>Repeat Password</label>
-  <input type='password' minlength="6" name='repeatPassword'>
-<br>
-  <label for=''>Full Name</label>
-  <input type='text' value="Bob Ironhacker" maxlength="20" name='fullName'>
-<br>
-  <label for=''>Nickname</label>
-  <input type='text' value="Bobobo" maxlength="20" name='nickname'>
-<br>
-  <label for=''>Birthday</label>
-  <input type='date' value="2020-02-02" name='birthday'>
-<br>
-  <label for=''>Gender</label>
-  <select name="gender">
-    <option value="M">Male</option>
-    <option value="F">Female</option>
-    <option value="O">Other</option>
-  </select>
-<br>
-  <label for=''>Street</label>
-  <input type='text' value="Carrer de Pamplona, 96" maxlength="30" name='street'>
-<br>
-  <label for=''>Neighborhood</label>
-  <input type='text' value="Poblenou" maxlength="15" name='neighborhood'>
-<br>
-  <label for=''>City</label>
-  <input type='text' value="Barcelona" maxlength="15" name='city'>
-<br>
-  <label for=''>Phone</label>
-  <input type='number' value="555000000" minlength="9" maxlength="9" name='phone'>
-<br>
-  <label for=''>Type of Card</label>
-  <select name="typeOfCard">
-    <option value="Visa">Visa</option>
-    <option value="MasterCard">MasterCard</option>
-    <option value="American Express">American Express</option>
-    <option value="Other">Other</option>
-  </select>
-<br>
-  <label for=''>Card No.</label>
-  <input type='number' value="123456789" name='cardNumber'>
-<br>
-  <label for=''>Expiration Date</label>
-  <input type='date' value="2020-02-02" name='expDate'>
-<br>
-  <label for=''>CVV</label>
-  <input type='number' value="123" name='cvv'>
-<br>
-  <button class='is-primary' type='submit'>Sign up</button>
-</form>
+    <label for=''>Email</label>
+    <input type='email' value="youremail@gmail.com" name='email'>
+  <br>
+    <label for=''>Password</label>
+    <input type='password' minlength="6" name='password'>
+  <br>
+    <label for=''>Repeat Password</label>
+    <input type='password' minlength="6" name='repeatPassword'>
+  <br>
+  </section>
 
-{{#if errorMessage}}
-<p>{{errorMessage}}</p>
-{{/if}}
+  <section class="signup-form-2"></section>
+    <label for=''>Full Name</label>
+    <input type='text' value="Bob Ironhacker" maxlength="20" name='fullName'>
+  <br>
+    <label for=''>Nickname</label>
+    <input type='text' value="Bobobo" maxlength="20" name='nickname'>
+  <br>
+    <label for=''>Birthday</label>
+    <input type='date' value="2020-02-02" name='birthday'>
+  <br>
+    <label for=''>Gender</label>
+    <select name="gender">
+      <option value="M">Male</option>
+      <option value="F">Female</option>
+      <option value="O">Other</option>
+    </select>
+  <br>
+    <label for=''>Street</label>
+    <input type='text' value="Carrer de Pamplona, 96" maxlength="30" name='street'>
+  <br>
+    <label for=''>Neighborhood</label>
+    <input type='text' value="Poblenou" maxlength="15" name='neighborhood'>
+  <br>
+    <label for=''>City</label>
+    <input type='text' value="Barcelona" maxlength="15" name='city'>
+  <br>
+    <label for=''>Phone</label>
+    <input type='number' value="555000000" minlength="9" maxlength="9" name='phone'>
+  <br>
+  <br>
+    <label for=''>Type of Card</label>
+    <select name="typeOfCard">
+      <option value="Visa">Visa</option>
+      <option value="MasterCard">MasterCard</option>
+      <option value="American Express">American Express</option>
+      <option value="Other">Other</option>
+    </select>
+  <br>
+    <label for=''>Card No.</label>
+    <input type='number' value="123456789" name='cardNumber'>
+  <br>
+    <label for=''>Expiration Date</label>
+    <input type='date' value="2020-02-02" name='expDate'>
+  <br>
+    <label for=''>CVV</label>
+    <input type='number' value="123" name='cvv'>
+  <br>
+    <button class='is-primary' type='submit'>Sign up</button>
+  </form>
+  </section>
 
-<h4>Already have an account? <a href="/login">Log In!</a></h4>
+  <div class="error"> 
+    {{#if errorMessage}}
+      <p>{{errorMessage}}</p>
+    {{/if}}
+  </div>
+
+  <h4>Already have an account? <a href="/login">Log In!</a></h4>
+</div>

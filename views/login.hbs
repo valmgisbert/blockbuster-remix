@@ -1,21 +1,27 @@
+<div class="login-pg">
 <h1>Welcome to BlockBuster REMIX</h1>
+  <section class="login-cont">
+  <form class='login-form' action='/login' method='post'>
+    <label for=''>Email</label>
+    <input type='text' name='email'>
+    <br>
+    <label for=''>Password</label>
+    <input type='text' name='password'>
+    <br>
+    <button class='is-primary' type='submit'>Log in</button>
+  </form>
+  </section>
 
-<form action='/login' method='post'>
+  <section class="login-pg-signup">
+  <p>Not a member?</p>
+  <br>
+  <a href="/signup">
+  <button class='is-primary'>Sign up</button></a>
+  </section>
 
-  <label for=''>Email</label>
-  <input type='text' name='email'>
-
-  <label for=''>Password</label>
-  <input type='text' name='password'>
-
-  <button class='is-primary' type='submit'>Log in</button>
-</form>
-
-<p>Not a member?</p>
-<br>
-<a href="/signup">
-<button class='is-primary'>Sign up</button></a>
-
-{{#if errorMsg}}
-<p>{{errorMsg}}</p>
-{{/if}}
+    {{#if errorMsg}}
+  <section class="error">
+      <p>{{errorMsg}}</p>
+  </section>
+    {{/if}}
+</div>

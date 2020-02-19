@@ -18,7 +18,9 @@
   <button class='is-primary' type='submit'>Add a game</button>
 </form>
 
-{{#if errorMsg}}
-<p>{{errorMsg}}</p>
-{{/if}}
+<div class="error">
+  {{#if errorMsg}}
+    <p>{{errorMsg}}</p>
+  {{/if}}
+</div>
 <br>
