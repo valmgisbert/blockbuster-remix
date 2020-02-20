@@ -8,6 +8,7 @@
     <label for=''>Password</label>
     <input type='password' name='password'>
     <br>
+    <p style="font-size: 8px"><i>"Protocol 3: Protect the User."</i></p>
     <button class='is-primary' type='submit'>Log in</button>
   </form>
   </section>
@@ -19,9 +20,9 @@
   <button class='is-primary'>Sign up</button></a>
   </section>
 
-    {{#if errorMsg}}
-  <section class="error">
-      <p>{{errorMsg}}</p>
-  </section>
-    {{/if}}
+      {{#if errorMsg}}
+    <section class="error">
+        <p>{{errorMsg}}</p>
+    </section>
+      {{/if}}
 </div>
