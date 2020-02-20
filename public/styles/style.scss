@@ -156,6 +156,8 @@ input {
   justify-content: space-between;
   align-items: center;
 
+
+
   h2 {
     font-size: 12px;
     color: black;
@@ -504,10 +506,6 @@ input {
   align-items: center;
   margin-bottom: 20px;
   padding: 10px
-
-  bottom {
-    margin-top: 0px;
-  }
 }
 
 .profile-btns {
@@ -525,7 +523,9 @@ input {
   line-height: normal;
 
 }
-
+.prof-input {
+  margin-bottom: 15px;
+}
 .profile-game, p {
   padding-left: 5px;
   padding-right: 5px;
