@@ -88,7 +88,7 @@ notificationsRouter.get("/success/:gameRentId", (req, res) => {
   RentRequest.findById(rentFormId)
   .populate("gameForRentRef").populate("gameOwnerRef").populate("gameRenterRef")
   .then( (data) => {
-    data.addedMessage = "All your game are belong to us!"
+    data.addedMessage = "Rent super effective!"
     res.render("success", data)
     console.log(data)
   })

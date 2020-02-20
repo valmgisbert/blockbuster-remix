@@ -1,34 +1,38 @@
-<h3>Hey! Listen! {{nickname}}  </h3>
 
+<div class="page-cont">
+  <h2>Hey! Listen! {{nickname}}</h2>
+  <section class='home-search'>
+  <h3>Put your games up for rent!</h3>
+  <form action='/profile' method='post'>
+    <label for=''>Game</label>
+    <input type='text' name='game' value="Oxenfree">
+    <button class='is-primary' type='submit'>Search Options</button>
+  </form>
+  </section>
+
+
+  <h2>My games!</h2>
+      {{#each games}}
+    <section class="profile-title-bar"> 
+      <div class="profile-game">
+        <p>
+        {{this.title}}
+        on {{this.platform}}.
+        Price: ${{this.price}}.
+        Min:{{this.minDays}}.
+        Max:{{this.maxDays}}.
+        <b>Availability:{{this.isAvailable}}.</b>
+        </p>
+      </div>
+      <div class="profile-btns">
+        <form action="/profile/available/{{this._id}}" method="post">
+        <button class='is-primary' type="submit">Avail.</button> </form>
+        <form action="/profile/edit/{{this._id}}" method="get">
+        <button class='is-alt' type="submit">edit</button> </form>
+        <form action="/profile/delete/{{this._id}}" method="post">
+        <button class='is-secondary' type="submit">delete</button> </form>
+      </div>
+    </section>
+      {{/each}}
+      <p style="font-size: 8px"><i>"All your game are belong to us."</i></p>
 </div>
-<br>
-<h2>Put your games for rent!</h2>
-
-
-
-<h4>Write a game title and click search</h4>
-<form action='/profile' method='post'>
-  <label for=''>Game Title</label>
-  <input type='text' name='game' value="Oxenfree">
-  <button class='is-primary' type='submit'>Search Options</button>
-</form>
-
-
-<h3>All my games up for rent</h3>
-    <p style="font-size: 8px"><i>"All your game are belong to us."</i></p>
-{{#each games}}
-<div>
-Title:{{this.title}}.
-Platform:{{this.platform}}.
-Price: ${{this.price}}.
-Min. Days:{{this.minDays}}.
-Max. Days:{{this.maxDays}}.
-Availability:{{this.isAvailable}}.
-<form action="/profile/available/{{this._id}}" method="post">
-<button class='is-primary' type="submit">available</button> </form>
-<form action="/profile/edit/{{this._id}}" method="get">
-<button class='is-primary' type="submit">edit</button> </form>
-<form action="/profile/delete/{{this._id}}" method="post">
-<button class='is-primary' type="submit">delete</button> </form>
-</div>
-{{/each}}
