@@ -10,7 +10,7 @@ const axios = require("axios");
 homeRouter.post("/game-search", (req, res, next) => {
   const { title } = req.body;
 
-  GameForRent.find({ title: { $regex: new RegExp(title), $options: "i" } }) //IT WORKS!! :D
+  GameForRent.find({ title: { $regex: new RegExp(title), $options: "i" }, isAvailable : true, gameOwnerRef: { $ne: req.session.currentUser._id } }) //IT WORKS!! :D
     .then(games => {
       const searchResults = games;
       res.render("game-search-results", { searchResults });
@@ -88,17 +88,17 @@ homeRouter.get(
 homeRouter.post("/success/:gameId/:gameOwnerId", (req, res, next) => {
 const { totalDays, totalPrice } = req.body;
 
-  RentRequest.create({
+  const createRentReqPr = RentRequest.create({
     gameForRentRef: req.params.gameId,
     gameOwnerRef: req.params.gameOwnerId,
     gameRenterRef: req.session.currentUser._id,
     totalDays,
     totalPrice
-
   })
+  const gameFlagPr = GameForRent.findByIdAndUpdate(req.params.gameId, { isAvailable: false })
+  Promise.all([createRentReqPr, gameFlagPr])
     .then(createdRentRequest => {
-      console.log(createdRentRequest);
-      return RentRequest.findById(createdRentRequest._id)
+      return RentRequest.findById(createdRentRequest[0]._id)
         .populate("gameForRentRef")
         .populate("gameOwnerRef")
         .populate("gameRenterRef");

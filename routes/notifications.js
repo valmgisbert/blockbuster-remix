@@ -43,8 +43,8 @@ notificationsRouter.get("/", (req, res) => {
         rentform.readableDate = readableDate 
         console.log(rentform)
         // to reduce size of game
-        if (rentform.gameForRentRef && rentform.gameForRentRef.title.length > 20) {
-          rentform.gameForRentRef.title = rentform.gameForRentRef.title.slice(0,20) + "..."
+        if (rentform.gameForRentRef && rentform.gameForRentRef.title.length > 18) {
+          rentform.gameForRentRef.title = rentform.gameForRentRef.title.slice(0,18) + "..."
         } 
         data.myGames.push({rentform, readableDate}); // passing data as well as the readable date variable
       });

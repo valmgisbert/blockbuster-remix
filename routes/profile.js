@@ -171,6 +171,12 @@ profileRouter.post("/edit/:gameId", (req, res) => {
   .catch( (err) => console.log(err));
 })
 
+profileRouter.post("/available/:gameId", (req, res) => {
+  GameForRent.findByIdAndUpdate(req.params.gameId, { isAvailable: true })
+  .then( (data) => res.redirect("/profile"))
+  .catch( (err) => console.log(err));
+})
+
 // GET render profile
 profileRouter.get("/", (req, res) => {
   // find all games from current active user
