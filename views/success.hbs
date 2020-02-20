@@ -5,20 +5,16 @@
 
     <div class="game-basic-info">
         <div class="card">
-            <div>
+           <div class="card-cover">
                 <img class="img-thumbnail" src="{{gameForRentRef.image}}" alt="game-cover"> <br>
             </div>
             <div class="card-info"> 
-                <br>
-                title:{{gameForRentRef.title}}
-                <br>
-                platform:{{gameForRentRef.platform}}
-                <br>
-                price per day: €{{gameForRentRef.price}}
-                <br>
-                days to rent:{{totalDays}}
-                <br>
-                total price: €{{totalPrice}}
+            
+                <p><i>{{gameForRentRef.title}}</i> <br>
+                {{gameForRentRef.platform}} <br>
+                ppd: €{{gameForRentRef.price}} <br>
+                days: {{totalDays}} <br>
+                total: €{{totalPrice}}</p>
             </div>
         </div>
     </div>

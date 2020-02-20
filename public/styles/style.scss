@@ -326,7 +326,6 @@ input {
   @include rounded-cont(4px, black, white );
   display: flex;
 	flex-direction: column;
-	flex-wrap: wrap;
 	justify-content: flex-start;
 	align-items: stretch;
 	align-content: stretch;
@@ -334,26 +333,15 @@ input {
   width: 85%;
   margin: 10px 30px;
   
-  .first-row{
+  .img-box{ 
+    @include simple-cont(3px, black);
     display: flex;
-	  flex-direction: row;
-	  justify-content: space-around;
-	  align-items: baseline;
-    align-content: flex-start;
-    
-    .img-box{ 
-      @include simple-cont(3px, black);
-        height: 113px;
-        width: 90px;
-          img {
-            object-fit: contain;
-            height: 100%;
-          }
-    }
-
-    .basic-info {
-        margin: 10px;
-    }
+    height: 120px;
+    width: 90px;
+      img {
+        object-fit: cover;
+        width: 100%;
+      }
   }
 
   .desc-info{ //hidden
@@ -361,6 +349,18 @@ input {
     display: none;
     overflow: hidden;
     background-color: #FFFFFF;
+  }
+  .rent-days-input {
+    @include simple-cont(1px,gray );
+    background-color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size:10px;
+  }
+  .rent-btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
   }
 }
 

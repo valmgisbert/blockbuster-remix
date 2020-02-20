@@ -411,8 +411,6 @@ input {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -426,7 +424,40 @@ input {
   margin: 10px 30px;
 }
 
-.all-rent-info .first-row {
+.all-rent-info .img-box {
+  -webkit-box-shadow: 3px 0 black, -3px 0 black, 0 -3px black, 0 3px black;
+          box-shadow: 3px 0 black, -3px 0 black, 0 -3px black, 0 3px black;
+  margin: 3px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 120px;
+  width: 90px;
+}
+
+.all-rent-info .img-box img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+
+.all-rent-info .desc-info {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #FFFFFF;
+}
+
+.all-rent-info .rent-days-input {
+  -webkit-box-shadow: 1px 0 gray, -1px 0 gray, 0 -1px gray, 0 1px gray;
+          box-shadow: 1px 0 gray, -1px 0 gray, 0 -1px gray, 0 1px gray;
+  margin: 1px auto;
+  background-color: white;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+}
+
+.all-rent-info .rent-btns {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -436,36 +467,9 @@ input {
           flex-direction: row;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
-  -ms-flex-line-pack: start;
-      align-content: flex-start;
-}
-
-.all-rent-info .first-row .img-box {
-  -webkit-box-shadow: 3px 0 black, -3px 0 black, 0 -3px black, 0 3px black;
-          box-shadow: 3px 0 black, -3px 0 black, 0 -3px black, 0 3px black;
-  margin: 3px auto;
-  height: 113px;
-  width: 90px;
-}
-
-.all-rent-info .first-row .img-box img {
-  -o-object-fit: contain;
-     object-fit: contain;
-  height: 100%;
-}
-
-.all-rent-info .first-row .basic-info {
-  margin: 10px;
-}
-
-.all-rent-info .desc-info {
-  padding: 0 18px;
-  display: none;
-  overflow: hidden;
-  background-color: #FFFFFF;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .game-add-search-pg {
