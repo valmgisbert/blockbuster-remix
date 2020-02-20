@@ -93,17 +93,21 @@ body {
   text-decoration: none;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   position: static;
-  font-size: 12px;
   background-color: #011627;
   background-size: cover;
   padding: 7px;
+  text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.navbar-img{
+  width: 30px;
 }
 
 #nav-bar a {
   text-decoration: none;
-  color: #FDFFFC;
 }
 
 .error{
@@ -170,7 +174,14 @@ input {
 }
 
 //LOGIN
-
+.logo{
+  img{
+  display: flex;
+  width: 200px;
+  height: auto;
+  justify-content: center;
+  }
+}
 .login-cont {
   @include rounded-cont(4px, black, white);
 
@@ -356,13 +367,21 @@ input {
     font-family: 'Press Start 2P', cursive;
     font-size:10px;
   }
-  .rent-btns {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-  }
+  
+ 
+    .floated {
+    display: inline-block;
+    margin: 20px;
+    }
+
+    .goback{
+      display: flex;
+      justify-content: flex-end;
+      margin-top: -70px;
+    }
+  
 }
+
 
 // game-add-search
 .game-add-search-pg {
@@ -475,6 +494,55 @@ input {
   }
 }
 
+// PROFILE
+.profile-title-bar {
+  @include simple-cont(4px, black); 
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px
+
+  bottom {
+    margin-top: 0px;
+  }
+}
+
+.profile-btns {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 90%;
+  margin: 0;
+  padding-bottom: 5px
+}
+
+.profile-game {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+
+}
+
+.profile-game, p {
+  padding-left: 5px;
+  padding-right: 5px;
+  line-height: 15px;
+}
+
+.profile-btns, .is-primary {
+  margin-top: 0px;
+}
+
+.profile-btns, .is-alt {
+  margin-top: 0px;
+}
+
+.profile-btns, .is-secondary {
+  margin-top: 0px;
+}
 //SUCCESS
 .success-pg {
   height: 90vh;

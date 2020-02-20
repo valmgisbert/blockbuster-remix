@@ -68,19 +68,22 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   position: static;
-  font-size: 12px;
   background-color: #011627;
   background-size: cover;
   padding: 7px;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.navbar-img {
+  width: 30px;
 }
 
 #nav-bar a {
   text-decoration: none;
-  color: #FDFFFC;
 }
 
 .error {
@@ -169,6 +172,17 @@ input {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+}
+
+.logo img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 200px;
+  height: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .login-cont {
@@ -457,19 +471,19 @@ input {
   font-size: 10px;
 }
 
-.all-rent-info .rent-btns {
+.all-rent-info .floated {
+  display: inline-block;
+  margin: 20px;
+}
+
+.all-rent-info .goback {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-top: -70px;
 }
 
 .game-add-search-pg {
@@ -648,6 +662,73 @@ input {
   width: 100%;
   padding: 0px;
   line-height: 15px;
+}
+
+.profile-title-bar {
+  -webkit-box-shadow: 4px 0 black, -4px 0 black, 0 -4px black, 0 4px black;
+          box-shadow: 4px 0 black, -4px 0 black, 0 -4px black, 0 4px black;
+  margin: 4px auto;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+  padding: 10px bottom;
+  padding-margin-top: 0px;
+}
+
+.profile-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.profile-game {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  line-height: normal;
+}
+
+.profile-game, p {
+  padding-left: 5px;
+  padding-right: 5px;
+  line-height: 15px;
+}
+
+.profile-btns, .is-primary {
+  margin-top: 0px;
+}
+
+.profile-btns, .is-alt {
+  margin-top: 0px;
+}
+
+.profile-btns, .is-secondary {
+  margin-top: 0px;
 }
 
 .success-pg {
