@@ -1,5 +1,4 @@
 # blockbuster-remix
-<br>
 
 ## Description
 Rent platform for video games from local owners.
@@ -172,7 +171,7 @@ Rent platform for video games from local owners.
 ### Git
 [Repository Link](https://github.com/valmgisbert/blockbuster-remix/)
 
-[Deploy Link]()
+[Deploy Link](https://blockbuster-remix.herokuapp.com/login)
 
 <br>
 
