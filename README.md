@@ -107,42 +107,45 @@ Rent platform for video games from local owners.
 ## Models
  
  - User 
-    new Schema ({
-     	_id: ,
-     	email: String, required: true,
-      password: String, minlength: 6, maxlength: 12,
-     	fullName: String, required: true, maxlength: 20,
-      birthday: Date,
-      gender: String, ENUM[M,F,other]
-      address: String, required: true, maxlength: 30,
-      phone: String, required: true, minlength: 9, maxlength: 9,
-      cardInfo: {
-        typeOfCard: String, required: true, ENUM[Visa, MAsterCard, American Express, other]
-        cardNumber: Number, required: true
-        expDate: Date, required: true
-        CVV: Number, required: true
-      	}
-		})
-          
+ ```
+    	new Schema ({
+     		_id: ,
+     		email: String, required: true,
+      		password: String, minlength: 6, maxlength: 12,
+     		fullName: String, required: true, maxlength: 20,
+      		birthday: Date,
+      		gender: String, ENUM[M,F,other]
+      		address: String, required: true, maxlength: 30,
+      		phone: String, required: true, minlength: 9, maxlength: 9,
+     		cardInfo: {
+       			typeOfCard: String, required: true, ENUM[Visa, MAsterCard, American Express, other]
+        		cardNumber: Number, required: true
+        		expDate: Date, required: true
+        		CVV: Number, required: true
+      		}
+	})
+  ```       
   - RentRequest 
-    new Schema ({
-			_id: ,
-      gameOwnerRef: user._id, 
-      gameRef: gameForRent._id,
-      gameRenterRef: user._id,
-			days: Number, required: true, 
-    })
-    
+  ```
+ 	new Schema ({
+		_id: ,
+      		gameOwnerRef: user._id, 
+     		gameRef: gameForRent._id,
+      		gameRenterRef: user._id,
+		days: Number, required: true, 
+    	})
+   ```
   - GameForRent 
-		new Schema ({
-			_id: ,
-			gameAPIref: API._id,
-			request: [rentRequest._id,,,]
-			price: Number, required: true,
-			maxDays: Number, required: true
-			isAvailable: Boolean, **
-    })
-    
+  ```
+	new Schema ({
+		_id: ,
+		gameAPIref: API._id,
+		request: [rentRequest._id,,,]
+		price: Number, required: true,
+		maxDays: Number, required: true
+		isAvailable: Boolean, **
+   	})
+ ```
     <br>
     
 ## Backlog
